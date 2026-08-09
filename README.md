@@ -1,102 +1,94 @@
 # Montevideo Silenciosa
 
-Montevideo Silenciosa es una aplicacion web colaborativa para visualizar, medir y reportar contaminacion sonora en Montevideo.
+Montevideo Silenciosa es una aplicación web colaborativa para visualizar, medir y reportar contaminación sonora en Montevideo.
 
-El proyecto muestra un mapa interactivo con lugares de interes, un mapa de calor de ruido estimado, filtros por tipo de fuente sonora y una linea de tiempo historica. Tambien permite registrar usuarios, iniciar sesion, guardar mediciones, enviar reportes con contexto y consultar el historial desde el perfil.
+El proyecto muestra un mapa interactivo con lugares de interés, un mapa de calor de ruido estimado, filtros por tipo de fuente sonora y una línea de tiempo histórica. Permite registrar usuarios, iniciar sesión (con correo o con Google), guardar mediciones, enviar reportes con contexto y consultar el historial desde el perfil. Los datos de usuarios, mediciones, reportes y noticias viven en la nube con Firebase y se sincronizan en tiempo real entre dispositivos.
 
 ## Funcionalidades
 
 - Mapa interactivo de Montevideo.
-- Mapa de calor de contaminacion sonora.
-- Filtros por tipo de ruido: transito, comercial, obra, nocturno, terminal y zonas verdes.
-- Linea de tiempo con actualidad, meses anteriores y anos anteriores.
-- Marcadores de lugares de interes con datos especificos de ruido.
-- Registro e inicio de sesion dentro de la pestana Perfil.
+- Mapa de calor de contaminación sonora.
+- Filtros por tipo de ruido: tránsito, comercial, obra, nocturno, terminal y zonas verdes.
+- Línea de tiempo con actualidad, meses anteriores y años anteriores.
+- Marcadores de lugares de interés con datos específicos de ruido.
+- Mediciones ciudadanas mostradas en el mapa en tiempo real.
+- Registro e inicio de sesión con correo o con Google.
 - Mediciones de ruido con contexto: fuente, zona y nota.
-- Reportes con contexto: zona, horario, intensidad, fuente y recurrencia.
+- Reportes con contexto: zona, horario, intensidad, fuente, recurrencia y foto.
 - Historial de mediciones y reportes en Perfil.
+- Noticias y página de datos y metodología.
 - Modo claro y oscuro.
 
-> El mapa de calor usa mediciones de campo del [Mapa Acústico de Montevideo 2025](https://idm.fing.edu.uy/es/node/52928) (IMFIA - Facultad de Ingenieria, Udelar, e Intendencia de Montevideo): 246 puntos recuperados de la version publica del estudio. Los valores mostrados por ubicacion y por hora son estimaciones sobre esos datos; no son mediciones en tiempo real. Mas detalle en la pagina "Datos y metodologia" de la app.
+> El mapa de calor usa mediciones de campo del Mapa Acústico de Montevideo 2025 (IMFIA - Facultad de Ingeniería, Udelar, e Intendencia de Montevideo): 246 puntos recuperados de la versión pública del estudio. Los valores mostrados por ubicación y por hora son estimaciones sobre esos datos; no son mediciones en tiempo real. Más detalle en la página "Datos y metodología" de la app.
 
-## Tecnologias usadas
+## Tecnologías usadas
 
 - React
 - TypeScript
 - Vite
 - React Router
-- Leaflet
-- React Leaflet
+- Leaflet y React Leaflet
 - Lucide React
-- LocalStorage para persistencia local del prototipo
+- Firebase (Authentication y Cloud Firestore)
 - CSS puro para estilos responsivos
 
-## Como correr el proyecto
+> La app usa Firebase para autenticación y datos. Para que funcione es necesario configurar las variables `VITE_FIREBASE_*` en un archivo `.env` (ver `.env.example`). El `.env` no se sube al repositorio.
 
-Primero instalá las dependencias:
+## Cómo correr el proyecto
+
+Instalá las dependencias:
 
 ```powershell
 npm install
 ```
 
-Luego iniciá el servidor de desarrollo:
+Iniciá el servidor de desarrollo:
 
 ```powershell
-npm.cmd run dev
+npm run dev
 ```
 
 Abrí la app en el navegador:
 
 ```text
-http://localhost:5173
+https://localhost:5173
 ```
+
+El servidor usa HTTPS con un certificado local de desarrollo. La primera vez, el navegador puede pedir aceptar el certificado (Avanzado → Continuar).
 
 ## Ver la app desde otro dispositivo en la misma red
 
-Para que un celular u otra computadora conectada a la misma red pueda ver la app, corré Vite escuchando en toda la red:
+El servidor de desarrollo ya escucha en toda la red. Abrí desde el otro dispositivo:
+
+```text
+https://TU_IP_LOCAL:5173
+```
+
+Como el certificado es de desarrollo, en el celular u otra computadora también hay que aceptarlo. Si no carga, revisá que ambos dispositivos estén en la misma red y que Windows Firewall permita el acceso a Node/Vite en redes privadas.
+
+## Compilar para producción
 
 ```powershell
-npm.cmd run dev -- --host 0.0.0.0
+npm run build
 ```
 
-Luego abrí desde el otro dispositivo:
-
-```text
-http://TU_IP_LOCAL:5173
-```
-
-Ejemplo:
-
-```text
-http://10.13.2.228:5173
-```
-
-Si no carga, revisá que ambos dispositivos estén en la misma red y que Windows Firewall permita el acceso a Node/Vite en redes privadas.
-
-## Compilar para produccion
-
-Para generar la version final:
-
-```powershell
-npm.cmd run build
-```
-
-Los archivos compilados quedan en la carpeta:
-
-```text
-dist/
-```
+Los archivos compilados quedan en la carpeta `dist/`.
 
 ## Estructura principal
 
 ```text
 src/
-  components/   Componentes reutilizables como mapa, navegacion, leyenda y controles
-  contexts/     Contexto de modo claro/oscuro
+  components/   Componentes reutilizables: mapa, navegación, leyenda, controles
+  contexts/     Contextos de modo claro/oscuro y autenticación
   data/         Datos de lugares, ruido y opciones de contexto
-  pages/        Pantallas principales de la aplicacion
+  lib/          Cliente de Firebase y funciones de datos (api)
+  pages/        Pantallas principales de la aplicación
 ```
+
+## Seguridad
+
+El repositorio incluye `firestore.rules`, listo para aplicar en la consola de Firebase cuando se quiera salir del modo de prueba (test mode).
 
 ## Estado del proyecto
 
-Este proyecto esta en etapa de prototipo. La app ya incluye navegacion, mapa, datos estimados, registro/login local, mediciones, reportes e historial. Para una version real seria necesario conectar una base de datos, autenticacion segura y fuentes verificables de datos sonoros.
+Prototipo funcional con autenticación real y datos en la nube. Las mediciones y reportes requieren sesión iniciada y perfil completo. Las fotos de los reportes se guardan dentro de Firestore como base64 para mantenerse en el plan gratuito de Firebase (Spark); si en el futuro se usa el plan de pago (Blaze), se pueden migrar a Cloud Storage sin cambiar la interfaz.
