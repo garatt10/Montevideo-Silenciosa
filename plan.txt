@@ -1,0 +1,116 @@
+Plan de MVP — Montevideo Silenciosa
+1. Frase corta del producto
+
+Montevideo Silenciosa es una aplicación colaborativa que permite medir, reportar y visualizar la contaminación sonora en Montevideo mediante un mapa interactivo actualizado por la comunidad.
+
+2. Qué tiene que hacer la primera versión
+
+La primera versión debe permitir:
+
+Registrarse e iniciar sesión.
+Medir el ruido utilizando el micrófono del celular durante 1 minuto.
+Calcular un promedio aproximado de decibeles.
+Guardar la ubicación de la medición mediante GPS.
+Permitir corregir la ubicación manualmente si es necesario.
+Mostrar un mapa de Montevideo con colores según el nivel de ruido.
+Ver información de una zona seleccionada:
+Ruido estimado actual.
+Cantidad de mediciones recientes.
+Promedio histórico.
+Fotos y comentarios asociados.
+Crear reportes con:
+Foto.
+Descripción.
+Ubicación.
+Registrar lugares de interés (shoppings, plazas, parques, terminales, etc.).
+Mostrar un nivel de ruido estimado basado en mediciones recientes de la zona.
+3. Qué NO vamos a construir
+
+Para mantener el MVP simple y alcanzable, no se incluirán:
+
+Ranking de usuarios.
+Sistema de puntos o recompensas.
+Noticias y artículos.
+Notificaciones push.
+Inteligencia artificial avanzada para predicción de ruido.
+Integración con organismos públicos.
+Cobertura de todo Uruguay.
+Chat entre usuarios.
+Redes sociales internas.
+Estadísticas avanzadas o paneles complejos.
+Mediciones automáticas en segundo plano.
+4. Pantallas mínimas
+Pantalla 1 — Inicio de sesión / Registro
+Crear cuenta.
+Iniciar sesión.
+Pantalla 2 — Mapa principal
+Mapa de Montevideo.
+Zonas coloreadas según nivel de ruido.
+Botón "Medir ruido".
+Pantalla 3 — Medición
+Iniciar medición.
+Contador de 1 minuto.
+Confirmar envío.
+Pantalla 4 — Detalle de zona
+Ruido estimado actual.
+Promedio histórico.
+Cantidad de mediciones.
+Fotos.
+Comentarios.
+Pantalla 5 — Crear reporte
+Subir foto.
+Escribir descripción.
+Confirmar ubicación.
+Enviar reporte.
+5. Datos mínimos
+Usuario
+ID
+Nombre
+Correo electrónico
+Medición
+ID
+Usuario
+Decibeles promedio
+Fecha y hora
+Latitud
+Longitud
+Reporte
+ID
+Usuario
+Foto
+Descripción
+Fecha
+Ubicación
+Lugar de interés
+Nombre
+Categoría
+Shopping
+Plaza
+Parque
+Hospital
+Centro educativo
+Terminal
+Ubicación
+6. Cómo vamos a comprobar que funciona
+
+Consideraremos exitoso el MVP si:
+
+Técnica
+La aplicación registra mediciones correctamente.
+Las mediciones aparecen en el mapa.
+Los reportes se guardan y se visualizan.
+El cálculo de ruido estimado se actualiza con nuevas mediciones.
+Usuarios
+Un usuario nuevo puede:
+Registrarse.
+Realizar una medición.
+Verla reflejada en el mapa.
+Consultar información de una zona.
+
+Todo esto en menos de 5 minutos y sin ayuda externa.
+
+Validación del problema
+Los usuarios logran identificar zonas más tranquilas y más ruidosas de Montevideo.
+Los usuarios consideran útil consultar el mapa antes de visitar un lugar o realizar una actividad.
+
+Objetivo principal del MVP: demostrar que una comunidad de usuarios puede generar un mapa útil y actualizado de contaminación sonora en Montevideo utilizando únicamente sus teléfonos móviles.

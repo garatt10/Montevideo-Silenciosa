@@ -1,0 +1,1727 @@
+{
+  "fuente": "mapa-acustico-2025",
+  "puntos": [
+    {
+      "lat": -34.9291,
+      "lon": -56.16125,
+      "db": 66,
+      "direccion": "Rambla entre Bulevar Artigas y Errazquín",
+      "circuito": "CIRCUITO RAMBLA"
+    },
+    {
+      "lat": -34.92581,
+      "lon": -56.16009,
+      "db": 55,
+      "direccion": "Parva Domus entre Ariosto y Zorrilla de San Martín",
+      "circuito": "CIRCUITO PUNTA CARRETAS - POCITOS"
+    },
+    {
+      "lat": -34.92472,
+      "lon": -56.15458,
+      "db": 69,
+      "direccion": "Rambla entre Solano García y Joaquín Núñez",
+      "circuito": "CIRCUITO RAMBLA"
+    },
+    {
+      "lat": -34.91986,
+      "lon": -56.16973,
+      "db": 70,
+      "direccion": "Rambla Presidente Wilson frente a Teatro de Verano (en acera norte)",
+      "circuito": "CIRCUITO PARQUE RODÓ"
+    },
+    {
+      "lat": -34.91903,
+      "lon": -56.14881,
+      "db": 73,
+      "direccion": "Rambla entre Solano Antuña y Juan María Pérez",
+      "circuito": "CIRCUITO RAMBLA"
+    },
+    {
+      "lat": -34.91877,
+      "lon": -56.15187,
+      "db": 65,
+      "direccion": "Francisco Solano Antuña entre Tomás Diago y Roque Graseras",
+      "circuito": "CIRCUITO PUNTA CARRETAS - POCITOS"
+    },
+    {
+      "lat": -34.9185,
+      "lon": -56.1623,
+      "db": 68,
+      "direccion": "Bulevar Artigas entre Zúñiga e Itapúa",
+      "circuito": "CIRCUITO BULEVAR ARTIGAS"
+    },
+    {
+      "lat": -34.91678,
+      "lon": -56.15121,
+      "db": 63,
+      "direccion": "Roque Graseras entre Scosería y Zudáñez",
+      "circuito": "CIRCUITO ZONA BULEVAR ESPAÑA"
+    },
+    {
+      "lat": -34.91594,
+      "lon": -56.149,
+      "db": 72,
+      "direccion": "Rambla entre Scosería y Bulevar España",
+      "circuito": "CIRCUITO RAMBLA"
+    },
+    {
+      "lat": -34.91502,
+      "lon": -56.14876,
+      "db": 75,
+      "direccion": "Rambla entre Bulevar España y Avenida Brasil",
+      "circuito": "CIRCUITO RAMBLA"
+    },
+    {
+      "lat": -34.91499,
+      "lon": -56.14964,
+      "db": 69,
+      "direccion": "Bulevar España entre Rambla y Benito Blanco",
+      "circuito": "CIRCUITO BULEVAR ESPAÑA"
+    },
+    {
+      "lat": -34.91462,
+      "lon": -56.15157,
+      "db": 71,
+      "direccion": "Bulevar España entre Pedro Francisco Berro y Tomas Diago",
+      "circuito": "CIRCUITO PUNTA CARRETAS - POCITOS"
+    },
+    {
+      "lat": -34.91426,
+      "lon": -56.17518,
+      "db": 76,
+      "direccion": "Rambla entre Yaro y Emilio Frugoni",
+      "circuito": "CIRCUITO RAMBLA"
+    },
+    {
+      "lat": -34.91419,
+      "lon": -56.15039,
+      "db": 66,
+      "direccion": "Gadea entre Avenida Brasil y Cavia",
+      "circuito": "CIRCUITO ZONA BULEVAR ESPAÑA"
+    },
+    {
+      "lat": -34.91398,
+      "lon": -56.154,
+      "db": 70,
+      "direccion": "Bulevar España entre Sarmiento y Aguiar",
+      "circuito": "CIRCUITO BULEVAR ESPAÑA"
+    },
+    {
+      "lat": -34.91386,
+      "lon": -56.16571,
+      "db": 67,
+      "direccion": "Sarmiento entre José Requena García y Reissig",
+      "circuito": "CIRCUITO PARQUE RODÓ"
+    },
+    {
+      "lat": -34.91377,
+      "lon": -56.19056,
+      "db": 72,
+      "direccion": "Rambla entre Paraguay y La Cumparsita",
+      "circuito": "CIRCUITO RAMBLA"
+    },
+    {
+      "lat": -34.91291,
+      "lon": -56.16307,
+      "db": 69,
+      "direccion": "Bulevar Artigas entre 21 de Setiembre y Bulevar España",
+      "circuito": "CIRCUITO PUNTA CARRETAS - POCITOS"
+    },
+    {
+      "lat": -34.91256,
+      "lon": -56.16947,
+      "db": 64,
+      "direccion": "Dr. Joaquín de Salterain entre Avenida Gonzalo Ramírez y Dr. Lauro Müller",
+      "circuito": "CIRCUITO PARQUE RODÓ"
+    },
+    {
+      "lat": -34.91252,
+      "lon": -56.18258,
+      "db": 69,
+      "direccion": "Gonzalo Ramírez entre Salto y Martínez Trueba",
+      "circuito": "CIRCUITO CENTRO - CORDÓN"
+    },
+    {
+      "lat": -34.91245,
+      "lon": -56.14773,
+      "db": 73,
+      "direccion": "Benito Blanco entre Martí y Massini",
+      "circuito": "CIRCUITO ZONA BULEVAR ESPAÑA"
+    },
+    {
+      "lat": -34.91236,
+      "lon": -56.159,
+      "db": 70,
+      "direccion": "Bulevar España entre Muñoz y Franzini",
+      "circuito": "CIRCUITO BULEVAR ESPAÑA"
+    },
+    {
+      "lat": -34.91222,
+      "lon": -56.17799,
+      "db": 67,
+      "direccion": "Gonzalo Ramírez entre Minas y Magallanes",
+      "circuito": "CIRCUITO CENTRO - CORDÓN"
+    },
+    {
+      "lat": -34.91148,
+      "lon": -56.19078,
+      "db": 67,
+      "direccion": "Carlos Gardel entre Paraguay y Héctor Gutiérrez Ruiz",
+      "circuito": "CIRCUITO CENTRO - CORDÓN"
+    },
+    {
+      "lat": -34.91147,
+      "lon": -56.1617,
+      "db": 72,
+      "direccion": "Bulevar España entre Bulevar Artigas y Vázquez y Vega",
+      "circuito": "CIRCUITO BULEVAR ESPAÑA"
+    },
+    {
+      "lat": -34.9114,
+      "lon": -56.16767,
+      "db": 71,
+      "direccion": "Avenida Gonzalo Ramírez entre Salterain y Requena",
+      "circuito": "CIRCUITO PARQUE RODÓ"
+    },
+    {
+      "lat": -34.91115,
+      "lon": -56.15258,
+      "db": 71,
+      "direccion": "Avenida Brasil entre Santiago Vázquez y Ellauri",
+      "circuito": "CIRCUITO PUNTA CARRETAS - POCITOS"
+    },
+    {
+      "lat": -34.91083,
+      "lon": -56.16604,
+      "db": 66,
+      "direccion": "Av. Julio Herrera y Reissig entre Giribaldi y 21 de Setiembre",
+      "circuito": "CIRCUITO PARQUE RODÓ"
+    },
+    {
+      "lat": -34.91076,
+      "lon": -56.20908,
+      "db": 64,
+      "direccion": "Pérez Castellanos entre Buenos Aires y Reconquista",
+      "circuito": "CIRCUITO CIUDAD VIEJA"
+    },
+    {
+      "lat": -34.91034,
+      "lon": -56.18749,
+      "db": 63,
+      "direccion": "Durazno entre Aquiles Lanza y Ejido",
+      "circuito": "CIRCUITO CENTRO - CORDÓN"
+    },
+    {
+      "lat": -34.91013,
+      "lon": -56.20384,
+      "db": 71,
+      "direccion": "Rambla Gran Bretaña entre Maldonado y Treinta y Tres",
+      "circuito": "CIRCUITO RAMBLA"
+    },
+    {
+      "lat": -34.90985,
+      "lon": -56.17284,
+      "db": 65,
+      "direccion": "Juan Jackson entre Durazno y Maldonado",
+      "circuito": "CIRCUITO PARQUE RODÓ"
+    },
+    {
+      "lat": -34.90964,
+      "lon": -56.14389,
+      "db": 75,
+      "direccion": "Rambla entre Vicente Pagola y Buxareo",
+      "circuito": "CIRCUITO RAMBLA"
+    },
+    {
+      "lat": -34.90928,
+      "lon": -56.16318,
+      "db": 71,
+      "direccion": "Bulevar Artigas entre Alfredo Baldomir y Bulevar España",
+      "circuito": "CIRCUITO BULEVAR ARTIGAS"
+    },
+    {
+      "lat": -34.9092,
+      "lon": -56.14799,
+      "db": 74,
+      "direccion": "26 de Marzo entre Miguel Barreiro y Gabriel Pereira",
+      "circuito": "CIRCUITO PUNTA CARRETAS - POCITOS"
+    },
+    {
+      "lat": -34.90895,
+      "lon": -56.19215,
+      "db": 68,
+      "direccion": "Paraguay entre Maldonado y Canelones",
+      "circuito": "CIRCUITO BARRIO SUR"
+    },
+    {
+      "lat": -34.90872,
+      "lon": -56.20567,
+      "db": 74,
+      "direccion": "Buenos Aires entre Misiones y Treinta y Tres",
+      "circuito": "CIRCUITO CIUDAD VIEJA"
+    },
+    {
+      "lat": -34.90848,
+      "lon": -56.17067,
+      "db": 76,
+      "direccion": "Bulevar España entre Salterain y Pablo de María",
+      "circuito": "CIRCUITO BULEVAR ESPAÑA"
+    },
+    {
+      "lat": -34.90821,
+      "lon": -56.19678,
+      "db": 67,
+      "direccion": "Soriano entre Wilson Ferreira y Convención",
+      "circuito": "CIRCUITO CENTRO - CORDÓN"
+    },
+    {
+      "lat": -34.90798,
+      "lon": -56.18088,
+      "db": 72,
+      "direccion": "Canelones entre Lorenzo Carnelli y Minas",
+      "circuito": "CIRCUITO CENTRO - CORDÓN"
+    },
+    {
+      "lat": -34.90797,
+      "lon": -56.20923,
+      "db": 67,
+      "direccion": "Colón entre 25 de Mayo y Washington",
+      "circuito": "CIRCUITO CIUDAD VIEJA"
+    },
+    {
+      "lat": -34.90772,
+      "lon": -56.13608,
+      "db": 66,
+      "direccion": "Avenida Luis Alberto de Herrera entre Echevarriarza y Antonio Costa",
+      "circuito": "CIRCUITO AV. LUIS ALBERTO DE HERRERA"
+    },
+    {
+      "lat": -34.90768,
+      "lon": -56.19003,
+      "db": 68,
+      "direccion": "Soriano entre Quijano y Zelmar Michelini",
+      "circuito": "CIRCUITO CENTRO - CORDÓN"
+    },
+    {
+      "lat": -34.90753,
+      "lon": -56.2005,
+      "db": 69,
+      "direccion": "Liniers entre Buenos Aires y San José",
+      "circuito": "CIRCUITO CIUDAD VIEJA"
+    },
+    {
+      "lat": -34.90731,
+      "lon": -56.20758,
+      "db": 67,
+      "direccion": "Rincón entre Misiones y Zabala",
+      "circuito": "CIRCUITO CIUDAD VIEJA"
+    },
+    {
+      "lat": -34.90714,
+      "lon": -56.1599,
+      "db": 70,
+      "direccion": "Avenida Brasil entre Brito del Pino y Simón Bolívar",
+      "circuito": "CIRCUITO PUNTA CARRETAS - POCITOS"
+    },
+    {
+      "lat": -34.90686,
+      "lon": -56.20284,
+      "db": 67,
+      "direccion": "Juan Carlos Gómez entre Buenos Aires y Sarandí",
+      "circuito": "CIRCUITO CIUDAD VIEJA"
+    },
+    {
+      "lat": -34.90675,
+      "lon": -56.13338,
+      "db": 70,
+      "direccion": "Rambla entre Antonio Costa y Agustín Iturriaga",
+      "circuito": "CIRCUITO RAMBLA"
+    },
+    {
+      "lat": -34.90668,
+      "lon": -56.20528,
+      "db": 67,
+      "direccion": "Treinta y Tres entre 25 de Mayo y Rincón",
+      "circuito": "CIRCUITO CIUDAD VIEJA"
+    },
+    {
+      "lat": -34.90666,
+      "lon": -56.17511,
+      "db": 71,
+      "direccion": "Constituyente entre Yaro y Emilio Frugoni",
+      "circuito": "CIRCUITO CENTRO - CORDÓN"
+    },
+    {
+      "lat": -34.90643,
+      "lon": -56.20747,
+      "db": 73,
+      "direccion": "25 de Mayo entre Zabala y 1 de Mayo",
+      "circuito": "CIRCUITO CIUDAD VIEJA"
+    },
+    {
+      "lat": -34.9064,
+      "lon": -56.19814,
+      "db": 72,
+      "direccion": "Av. 18 de Julio entre Plaza Independencia y Andes",
+      "circuito": "CIRCUITO AV. 18 DE JULIO"
+    },
+    {
+      "lat": -34.90606,
+      "lon": -56.19359,
+      "db": 73,
+      "direccion": "Av. 18 de Julio entre Río Negro y Julio Herrera y Obes",
+      "circuito": "CIRCUITO AV. 18 DE JULIO"
+    },
+    {
+      "lat": -34.90598,
+      "lon": -56.21129,
+      "db": 58,
+      "direccion": "Piedras entre Maciel y Pérez Castellanos",
+      "circuito": "CIRCUITO CIUDAD VIEJA"
+    },
+    {
+      "lat": -34.90585,
+      "lon": -56.1914,
+      "db": 74,
+      "direccion": "Av. 18 de Julio entre Dra. Adela Reta y Dra. Adela Reta",
+      "circuito": "CIRCUITO AV. 18 DE JULIO"
+    },
+    {
+      "lat": -34.90585,
+      "lon": -56.18273,
+      "db": 76,
+      "direccion": "Constituyente entre Guayabos y Vázquez",
+      "circuito": "CIRCUITO CENTRO - CORDÓN"
+    },
+    {
+      "lat": -34.90555,
+      "lon": -56.18687,
+      "db": 74,
+      "direccion": "Av. 18 de Julio entre Santiago de Chile y Ejido",
+      "circuito": "CIRCUITO AV. 18 DE JULIO"
+    },
+    {
+      "lat": -34.90527,
+      "lon": -56.17224,
+      "db": 59,
+      "direccion": "Guaná entre Pablo de María y Blanes",
+      "circuito": "CIRCUITO CENTRO - CORDÓN"
+    },
+    {
+      "lat": -34.9052,
+      "lon": -56.20365,
+      "db": 65,
+      "direccion": "Juan Carlos Gómez entre Cerrito y 25 de Mayo",
+      "circuito": "CIRCUITO CIUDAD VIEJA"
+    },
+    {
+      "lat": -34.9052,
+      "lon": -56.19578,
+      "db": 69,
+      "direccion": "Colonia entre Convención y Río Branco",
+      "circuito": "CIRCUITO CENTRO - CORDÓN"
+    },
+    {
+      "lat": -34.90497,
+      "lon": -56.13269,
+      "db": 74,
+      "direccion": "Rambla entre 26 de Marzo y Melitón González",
+      "circuito": "CIRCUITO RAMBLA"
+    },
+    {
+      "lat": -34.9048,
+      "lon": -56.12499,
+      "db": 82,
+      "direccion": "Rambla entre Roberto Riveros y Tomás Basáñez",
+      "circuito": "CIRCUITO RAMBLA"
+    },
+    {
+      "lat": -34.90439,
+      "lon": -56.18247,
+      "db": 73,
+      "direccion": "Av. 18 de Julio entre Tacuarembó y Vázquez",
+      "circuito": "CIRCUITO AV. 18 DE JULIO"
+    },
+    {
+      "lat": -34.90434,
+      "lon": -56.14466,
+      "db": 73,
+      "direccion": "Joaquín Muñoz entre Buxareo y la Gaceta",
+      "circuito": "CIRCUITO PUNTA CARRETAS - POCITOS"
+    },
+    {
+      "lat": -34.90401,
+      "lon": -56.20307,
+      "db": 72,
+      "direccion": "Cerrito entre Juncal y Bartolomé Mitre",
+      "circuito": "CIRCUITO CIUDAD VIEJA"
+    },
+    {
+      "lat": -34.90369,
+      "lon": -56.13754,
+      "db": 73,
+      "direccion": "Avenida Luis Alberto de Herrera entre Juan Pablo Laguna y Plácido Ellauri",
+      "circuito": "CIRCUITO AV. LUIS ALBERTO DE HERRERA"
+    },
+    {
+      "lat": -34.90353,
+      "lon": -56.18548,
+      "db": 67,
+      "direccion": "Javier Barrios Amorín entre Uruguay y Mercedes",
+      "circuito": "CIRCUITO CENTRO - CORDÓN"
+    },
+    {
+      "lat": -34.90343,
+      "lon": -56.17361,
+      "db": 72,
+      "direccion": "José Enrique Rodó entre Dr. Juan A. Rodríguez y Juan Jackson",
+      "circuito": "CIRCUITO CENTRO - CORDÓN"
+    },
+    {
+      "lat": -34.90316,
+      "lon": -56.15932,
+      "db": 72,
+      "direccion": "Rivera entre Brito del Pino y Simón Bolívar",
+      "circuito": "CIRCUITO AV. RIVERA"
+    },
+    {
+      "lat": -34.90309,
+      "lon": -56.1519,
+      "db": 75,
+      "direccion": "Rivera enter Pastoriza y Campbell",
+      "circuito": "CIRCUITO AV. RIVERA"
+    },
+    {
+      "lat": -34.90253,
+      "lon": -56.14623,
+      "db": 74,
+      "direccion": "Rivera entre 2 de Mayo y Rosell y Rius",
+      "circuito": "CIRCUITO AV. RIVERA"
+    },
+    {
+      "lat": -34.90237,
+      "lon": -56.16353,
+      "db": 75,
+      "direccion": "Rivera entre Bulevar Artigas y 20 de Setiembre",
+      "circuito": "CIRCUITO AV. RIVERA"
+    },
+    {
+      "lat": -34.90225,
+      "lon": -56.16428,
+      "db": 75,
+      "direccion": "Bulevar Artigas entre Rivera y Palmar",
+      "circuito": "CIRCUITO BULEVAR ARTIGAS"
+    },
+    {
+      "lat": -34.90219,
+      "lon": -56.19269,
+      "db": 71,
+      "direccion": "Av. Libertador entre Uruguay y Paysandú",
+      "circuito": "CIRCUITO AV. LIBERTADOR"
+    },
+    {
+      "lat": -34.90218,
+      "lon": -56.17007,
+      "db": 75,
+      "direccion": "Rivera entre Requena y Salterain",
+      "circuito": "CIRCUITO AV. RIVERA"
+    },
+    {
+      "lat": -34.90198,
+      "lon": -56.17629,
+      "db": 75,
+      "direccion": "Av. 18 de Julio entre Tristán Narvaja y Eduardo Acevedo",
+      "circuito": "CIRCUITO AV. 18 DE JULIO"
+    },
+    {
+      "lat": -34.90138,
+      "lon": -56.19412,
+      "db": 66,
+      "direccion": "Río Negro entre Galicia y Cerro Largo",
+      "circuito": "CIRCUITO CENTRO - CORDÓN"
+    },
+    {
+      "lat": -34.9013,
+      "lon": -56.17968,
+      "db": 77,
+      "direccion": "Mercedes entre Magallanes y Gaboto",
+      "circuito": "CIRCUITO CENTRO - CORDÓN"
+    },
+    {
+      "lat": -34.90119,
+      "lon": -56.1384,
+      "db": 74,
+      "direccion": "Rivera entre Marcos Bruto y Luis Alberto de Herrera",
+      "circuito": "CIRCUITO AV. RIVERA"
+    },
+    {
+      "lat": -34.90103,
+      "lon": -56.17378,
+      "db": 72,
+      "direccion": "Av. 18 de Julio entre Fernández Crespo y Arenal Grande",
+      "circuito": "CIRCUITO AV. 18 DE JULIO"
+    },
+    {
+      "lat": -34.89991,
+      "lon": -56.17093,
+      "db": 75,
+      "direccion": "Av. 18 de Julio entre Joaquín Requena y Martín C. Martínez",
+      "circuito": "CIRCUITO AV. 18 DE JULIO"
+    },
+    {
+      "lat": -34.89894,
+      "lon": -56.06677,
+      "db": 78,
+      "direccion": "Rambla entre Araucana y San Nicolás",
+      "circuito": "CIRCUITO RAMBLA"
+    },
+    {
+      "lat": -34.89892,
+      "lon": -56.15496,
+      "db": 66,
+      "direccion": "Ricaldoni entre Brito del Pino y Alarcón",
+      "circuito": "CIRCUITO PARQUE BATLLE"
+    },
+    {
+      "lat": -34.89888,
+      "lon": -56.16466,
+      "db": 73,
+      "direccion": "Bulevar Artigas entre Gastón Ramón y Francisco Canaro",
+      "circuito": "CIRCUITO BULEVAR ARTIGAS"
+    },
+    {
+      "lat": -34.89834,
+      "lon": -56.19091,
+      "db": 70,
+      "direccion": "Av. Libertador entre La Paz y Valparaíso",
+      "circuito": "CIRCUITO AV. LIBERTADOR"
+    },
+    {
+      "lat": -34.89756,
+      "lon": -56.17921,
+      "db": 76,
+      "direccion": "Av. Fernández Crespo entre Cerro Largo y Galicia",
+      "circuito": "CIRCUITO CENTRO - CORDÓN"
+    },
+    {
+      "lat": -34.89755,
+      "lon": -56.07767,
+      "db": 75,
+      "direccion": "Rambla entre Ciudad de Guayaquil y Limburgo",
+      "circuito": "CIRCUITO RAMBLA"
+    },
+    {
+      "lat": -34.89749,
+      "lon": -56.09995,
+      "db": 78,
+      "direccion": "Rambla entre Estrázulas y Michigan",
+      "circuito": "CIRCUITO RAMBLA"
+    },
+    {
+      "lat": -34.89746,
+      "lon": -56.16464,
+      "db": 72,
+      "direccion": "Av. 18 de Julio entre 8 de Octubre y Bulevar Artigas",
+      "circuito": "CIRCUITO AV. 18 DE JULIO"
+    },
+    {
+      "lat": -34.89746,
+      "lon": -56.12462,
+      "db": 74,
+      "direccion": "Rivera entre Bulevar Batlle y Ordoñez y Espinosa",
+      "circuito": "CIRCUITO AV. RIVERA"
+    },
+    {
+      "lat": -34.89735,
+      "lon": -56.1417,
+      "db": 69,
+      "direccion": "Avenida Luis Alberto de Herrera entre 4 de Julio y Feliciano Rodríguez",
+      "circuito": "CIRCUITO AV. LUIS ALBERTO DE HERRERA"
+    },
+    {
+      "lat": -34.89735,
+      "lon": -56.1181,
+      "db": 76,
+      "direccion": "Rambla entre 9 de Junio y Colombes",
+      "circuito": "CIRCUITO RAMBLA"
+    },
+    {
+      "lat": -34.89734,
+      "lon": -56.17108,
+      "db": 67,
+      "direccion": "Joaquín Requena entre Colonia y Víctor Haedo",
+      "circuito": "CIRCUITO CENTRO - CORDÓN"
+    },
+    {
+      "lat": -34.89693,
+      "lon": -56.15653,
+      "db": 71,
+      "direccion": "Ramón Benzano y Lorenzo Mérola",
+      "circuito": "CIRCUITO PARQUE BATLLE"
+    },
+    {
+      "lat": -34.89632,
+      "lon": -56.1534,
+      "db": 69,
+      "direccion": "Vidiella y Ramón Benzano",
+      "circuito": "CIRCUITO PARQUE BATLLE"
+    },
+    {
+      "lat": -34.89607,
+      "lon": -56.19352,
+      "db": 72,
+      "direccion": "Paraguay entre Nueva York y Asunción",
+      "circuito": "CIRCUITO AGUADA"
+    },
+    {
+      "lat": -34.89598,
+      "lon": -56.10638,
+      "db": 74,
+      "direccion": "Rambla entre Hipólito Yrigoyen y Concepción del Uruguay",
+      "circuito": "CIRCUITO RAMBLA"
+    },
+    {
+      "lat": -34.89535,
+      "lon": -56.16732,
+      "db": 71,
+      "direccion": "Acevedo Díaz entre Muñoz y Fernández Luna",
+      "circuito": "CIRCUITO TRES CRUCES"
+    },
+    {
+      "lat": -34.89517,
+      "lon": -56.0857,
+      "db": 77,
+      "direccion": "Rambla entre Grito de Gloria y Motivos de Proteo",
+      "circuito": "CIRCUITO RAMBLA"
+    },
+    {
+      "lat": -34.89503,
+      "lon": -56.16865,
+      "db": 67,
+      "direccion": "Cufré entre Ferrer Sierra y Muñoz",
+      "circuito": "CIRCUITO TRES CRUCES"
+    },
+    {
+      "lat": -34.89475,
+      "lon": -56.16625,
+      "db": 75,
+      "direccion": "Ferrer Serra entre Acevedo Díaz y Cassinoni",
+      "circuito": "CIRCUITO TRES CRUCES"
+    },
+    {
+      "lat": -34.89454,
+      "lon": -56.12782,
+      "db": 71,
+      "direccion": "Bulevar Batlle y Ordóñez entre Dalmiro Costa y Marco Aurelio",
+      "circuito": "CIRCUITO BUCEO"
+    },
+    {
+      "lat": -34.89383,
+      "lon": -56.13522,
+      "db": 73,
+      "direccion": "Ramón Anador entre Estivao y Anzani",
+      "circuito": "CIRCUITO BUCEO"
+    },
+    {
+      "lat": -34.89345,
+      "lon": -56.18829,
+      "db": 71,
+      "direccion": "Av. Libertador entre Nicaragua y Venezuela",
+      "circuito": "CIRCUITO AV. LIBERTADOR"
+    },
+    {
+      "lat": -34.89318,
+      "lon": -56.17022,
+      "db": 69,
+      "direccion": "Goes entre Cufré y Juan Paullier",
+      "circuito": "CIRCUITO CENTRO - CORDÓN"
+    },
+    {
+      "lat": -34.89288,
+      "lon": -56.16644,
+      "db": 75,
+      "direccion": "Goes entre Bulevar Artigas y Duvimioso Terra",
+      "circuito": "CIRCUITO TRES CRUCES"
+    },
+    {
+      "lat": -34.89281,
+      "lon": -56.24755,
+      "db": 69,
+      "direccion": "Grecia entre Norteamérica e Inglaterra",
+      "circuito": "CIRCUITO CERRO"
+    },
+    {
+      "lat": -34.89278,
+      "lon": -56.16531,
+      "db": 70,
+      "direccion": "Bulevar Artigas entre Goes y Miguelete",
+      "circuito": "CIRCUITO BULEVAR ARTIGAS"
+    },
+    {
+      "lat": -34.89267,
+      "lon": -56.18511,
+      "db": 73,
+      "direccion": "Av. Fernández Crespo entre Nicaragua y Madrid",
+      "circuito": "CIRCUITO AGUADA"
+    },
+    {
+      "lat": -34.89236,
+      "lon": -56.114,
+      "db": 73,
+      "direccion": "Rivera entre Santiago de Anca y Atlántico",
+      "circuito": "CIRCUITO AV. RIVERA"
+    },
+    {
+      "lat": -34.892,
+      "lon": -56.15411,
+      "db": 72,
+      "direccion": "Vidiella y Av. Ricaldoni",
+      "circuito": "CIRCUITO PARQUE BATLLE"
+    },
+    {
+      "lat": -34.89197,
+      "lon": -56.15878,
+      "db": 75,
+      "direccion": "Avenida Italia entre Berro y Manuel Albo",
+      "circuito": "CIRCUITO AV. ITALIA"
+    },
+    {
+      "lat": -34.89184,
+      "lon": -56.05647,
+      "db": 78,
+      "direccion": "Rambla entre Divina Comedia y Avenida Arocena",
+      "circuito": "CIRCUITO RAMBLA"
+    },
+    {
+      "lat": -34.89146,
+      "lon": -56.19402,
+      "db": 72,
+      "direccion": "Paraguay entre Panamá y Guatemala",
+      "circuito": "CIRCUITO VÍA FÉRREA"
+    },
+    {
+      "lat": -34.89146,
+      "lon": -56.15554,
+      "db": 75,
+      "direccion": "Avenida Italia entre Brito Foresti y Centenario",
+      "circuito": "CIRCUITO AV. ITALIA"
+    },
+    {
+      "lat": -34.8914,
+      "lon": -56.14599,
+      "db": 71,
+      "direccion": "Avenida Luis Alberto de Herrera entre Santiago Gadea y República del Salvador",
+      "circuito": "CIRCUITO AV. LUIS ALBERTO DE HERRERA"
+    },
+    {
+      "lat": -34.89125,
+      "lon": -56.15569,
+      "db": 70,
+      "direccion": "Garibaldi entre Avenida Italia y Sambucetti",
+      "circuito": "CIRCUITO AV. GARIBALDI"
+    },
+    {
+      "lat": -34.89104,
+      "lon": -56.10286,
+      "db": 73,
+      "direccion": "Rivera entre Rimac y Río de la Plata",
+      "circuito": "CIRCUITO AV. RIVERA"
+    },
+    {
+      "lat": -34.89086,
+      "lon": -56.1678,
+      "db": 65,
+      "direccion": "Nicaragua entre Acevedo Díaz y Duvimioso Díaz",
+      "circuito": "CIRCUITO TRES CRUCES"
+    },
+    {
+      "lat": -34.89079,
+      "lon": -56.0746,
+      "db": 70,
+      "direccion": "Rivera entre Uspallata y San Marino",
+      "circuito": "CIRCUITO AV. RIVERA"
+    },
+    {
+      "lat": -34.89067,
+      "lon": -56.08574,
+      "db": 72,
+      "direccion": "Rivera entre Hernani y María Espínola",
+      "circuito": "CIRCUITO AV. RIVERA"
+    },
+    {
+      "lat": -34.89016,
+      "lon": -56.13331,
+      "db": 73,
+      "direccion": "Bulevar Batlle y Ordoñez entre Neyra y Comodoro Coé",
+      "circuito": "CIRCUITO BUCEO"
+    },
+    {
+      "lat": -34.89007,
+      "lon": -56.17919,
+      "db": 74,
+      "direccion": "Hocquart entre República y Justicia",
+      "circuito": "CIRCUITO CENTRO - CORDÓN"
+    },
+    {
+      "lat": -34.88956,
+      "lon": -56.16024,
+      "db": 76,
+      "direccion": "8 de Octubre entre Berro y Garibaldi",
+      "circuito": "CIRCUITO AV. 8 DE OCTUBRE"
+    },
+    {
+      "lat": -34.88882,
+      "lon": -56.16554,
+      "db": 74,
+      "direccion": "Bulevar Artigas entre Nueva Palmira y Hocquart",
+      "circuito": "CIRCUITO TRES CRUCES"
+    },
+    {
+      "lat": -34.88868,
+      "lon": -56.1476,
+      "db": 76,
+      "direccion": "Avenida Italia entre Herrera y Abacú",
+      "circuito": "CIRCUITO AV. ITALIA"
+    },
+    {
+      "lat": -34.88732,
+      "lon": -56.16258,
+      "db": 74,
+      "direccion": "Garibaldi entre Ramón Gómez y Anaya",
+      "circuito": "CIRCUITO AV. GARIBALDI"
+    },
+    {
+      "lat": -34.88723,
+      "lon": -56.14883,
+      "db": 72,
+      "direccion": "Avenida Luis Alberto de Herrera entre República Dominicana y Gregorio Funes",
+      "circuito": "CIRCUITO AV. LUIS ALBERTO DE HERRERA"
+    },
+    {
+      "lat": -34.88713,
+      "lon": -56.19028,
+      "db": 75,
+      "direccion": "Av. Agraciada entre Marmarajá y Arequita",
+      "circuito": "CIRCUITO AV. AGRACIADA"
+    },
+    {
+      "lat": -34.88702,
+      "lon": -56.11115,
+      "db": 75,
+      "direccion": "Avenida Italia entre Yrigoyen y Candelaria",
+      "circuito": "CIRCUITO AV. ITALIA"
+    },
+    {
+      "lat": -34.88692,
+      "lon": -56.12891,
+      "db": 75,
+      "direccion": "Avenida Italia entre Comercio y Minnesota",
+      "circuito": "CIRCUITO AV. ITALIA"
+    },
+    {
+      "lat": -34.88692,
+      "lon": -56.121,
+      "db": 75,
+      "direccion": "Avenida Italia entre Mataojo y Mariscala",
+      "circuito": "CIRCUITO AV. ITALIA"
+    },
+    {
+      "lat": -34.88685,
+      "lon": -56.19479,
+      "db": 69,
+      "direccion": "Mendoza entre Paraguay y Pacheco",
+      "circuito": "CIRCUITO AGUADA"
+    },
+    {
+      "lat": -34.88672,
+      "lon": -56.13853,
+      "db": 76,
+      "direccion": "Avenida Italia entre Anzani y Estivao",
+      "circuito": "CIRCUITO AV. ITALIA"
+    },
+    {
+      "lat": -34.88623,
+      "lon": -56.0586,
+      "db": 70,
+      "direccion": "Rivera entre Comedia y Arocena",
+      "circuito": "CIRCUITO AV. RIVERA"
+    },
+    {
+      "lat": -34.88607,
+      "lon": -56.16599,
+      "db": 73,
+      "direccion": "Bulevar Artigas entre Martín García y Coquimbo",
+      "circuito": "CIRCUITO BULEVAR ARTIGAS"
+    },
+    {
+      "lat": -34.88575,
+      "lon": -56.10123,
+      "db": 78,
+      "direccion": "Avenida Italia entre Tres Cerros y Segovia",
+      "circuito": "CIRCUITO AV. ITALIA"
+    },
+    {
+      "lat": -34.88561,
+      "lon": -56.04285,
+      "db": 77,
+      "direccion": "Rambla entre Dardo Regules y General French",
+      "circuito": "CIRCUITO RAMBLA"
+    },
+    {
+      "lat": -34.88495,
+      "lon": -56.09576,
+      "db": 77,
+      "direccion": "Avenida Italia entre Zum Felde y Fleming",
+      "circuito": "CIRCUITO AV. ITALIA"
+    },
+    {
+      "lat": -34.88482,
+      "lon": -56.17402,
+      "db": 66,
+      "direccion": "Goes entre Martín C. Martínez y Defensa",
+      "circuito": "CIRCUITO CENTRO - CORDÓN"
+    },
+    {
+      "lat": -34.88429,
+      "lon": -56.05304,
+      "db": 72,
+      "direccion": "Rivera entre Cartagena y Mar del Plata",
+      "circuito": "CIRCUITO AV. RIVERA"
+    },
+    {
+      "lat": -34.88396,
+      "lon": -56.16707,
+      "db": 74,
+      "direccion": "Garibaldi entre Bulevar Artigas y Cuñapirú",
+      "circuito": "CIRCUITO AV. GARIBALDI"
+    },
+    {
+      "lat": -34.88396,
+      "lon": -56.14164,
+      "db": 73,
+      "direccion": "Bulevar Batlle y Ordoñez entre Dionisio Oribe y Cardal",
+      "circuito": "CIRCUITO UNIÓN"
+    },
+    {
+      "lat": -34.88364,
+      "lon": -56.24717,
+      "db": 61,
+      "direccion": "Egipto entre Rusia y Charcas",
+      "circuito": "CIRCUITO CERRO"
+    },
+    {
+      "lat": -34.88347,
+      "lon": -56.17546,
+      "db": 66,
+      "direccion": "Domingo Aramburu entre Defensa y Martín C. Martínez",
+      "circuito": "VILLA MUÑOZ"
+    },
+    {
+      "lat": -34.88345,
+      "lon": -56.16629,
+      "db": 72,
+      "direccion": "Bulevar Artigas entre Cuñapirú y Colorado",
+      "circuito": "CIRCUITO BULEVAR ARTIGAS"
+    },
+    {
+      "lat": -34.88334,
+      "lon": -56.18314,
+      "db": 73,
+      "direccion": "General Flores entre Blandengues y Berthelot",
+      "circuito": "CIRCUITO AV. GRAL. FLORES"
+    },
+    {
+      "lat": -34.88334,
+      "lon": -56.13434,
+      "db": 70,
+      "direccion": "Comercio entre Pedro Ricaldoni y Lombardini",
+      "circuito": "CIRCUITO UNIÓN"
+    },
+    {
+      "lat": -34.88329,
+      "lon": -56.08527,
+      "db": 75,
+      "direccion": "Avenida Italia entre Catania y Bolivia",
+      "circuito": "CIRCUITO AV. ITALIA"
+    },
+    {
+      "lat": -34.88315,
+      "lon": -56.19436,
+      "db": 75,
+      "direccion": "Av. Agraciada entre General Luna y Santa Fe",
+      "circuito": "CIRCUITO AV. AGRACIADA"
+    },
+    {
+      "lat": -34.88306,
+      "lon": -56.15413,
+      "db": 78,
+      "direccion": "8 de Octubre entre Mariano Moreno y Luis Alberto de Herrera",
+      "circuito": "CIRCUITO AV. 8 DE OCTUBRE"
+    },
+    {
+      "lat": -34.88215,
+      "lon": -56.18636,
+      "db": 75,
+      "direccion": "San Martín entre Blandengues y Santa Fe",
+      "circuito": "CIRCUITO REDUCTO"
+    },
+    {
+      "lat": -34.88188,
+      "lon": -56.24753,
+      "db": 64,
+      "direccion": "Egipto entre Rusia y Suecia",
+      "circuito": "CIRCUITO CERRO"
+    },
+    {
+      "lat": -34.88128,
+      "lon": -56.08984,
+      "db": 56,
+      "direccion": "Durandeau entre Almirón y Senda Paralela a Semicircular",
+      "circuito": "CIRCUITO PARQUE RIVERA"
+    },
+    {
+      "lat": -34.88098,
+      "lon": -56.17039,
+      "db": 73,
+      "direccion": "Garibaldi entre Juan Paullier y Cufré",
+      "circuito": "CIRCUITO AV. GARIBALDI"
+    },
+    {
+      "lat": -34.88081,
+      "lon": -56.15756,
+      "db": 72,
+      "direccion": "Montecaseros entre Mariano Moreno y Pedro Olmida",
+      "circuito": "LARRAÑAGA"
+    },
+    {
+      "lat": -34.88012,
+      "lon": -56.09261,
+      "db": 74,
+      "direccion": "Zum Felde entre Doctor Benito Cuñaro y Durandeau",
+      "circuito": "CIRCUITO PARQUE RIVERA"
+    },
+    {
+      "lat": -34.88005,
+      "lon": -56.20035,
+      "db": 66,
+      "direccion": "Cívicos entre Princivale y Doctor Juan José Carbajal Victorino",
+      "circuito": "CIRCUITO VÍA FÉRREA"
+    },
+    {
+      "lat": -34.87907,
+      "lon": -56.25367,
+      "db": 63,
+      "direccion": "Perú entre Río de Janeiro y Bogotá",
+      "circuito": "CIRCUITO CERRO"
+    },
+    {
+      "lat": -34.87901,
+      "lon": -56.13973,
+      "db": 71,
+      "direccion": "Comercio entre Agustín Sosa y Juan Morelli",
+      "circuito": "CIRCUITO UNIÓN"
+    },
+    {
+      "lat": -34.87891,
+      "lon": -56.15756,
+      "db": 72,
+      "direccion": "Avenida Luis Alberto de Herrera entre Monte Caseros y Amadeo Roletti",
+      "circuito": "CIRCUITO AV. LUIS ALBERTO DE HERRERA"
+    },
+    {
+      "lat": -34.87873,
+      "lon": -56.18734,
+      "db": 77,
+      "direccion": "Millán entre Concepción Arenal y Guadalupe",
+      "circuito": "CIRCUITO REDUCTO"
+    },
+    {
+      "lat": -34.87856,
+      "lon": -56.14677,
+      "db": 75,
+      "direccion": "8 de Octubre entre Luis Batlle y Ordoñez y Crocker",
+      "circuito": "CIRCUITO AV. 8 DE OCTUBRE"
+    },
+    {
+      "lat": -34.87755,
+      "lon": -56.17621,
+      "db": 75,
+      "direccion": "Garibaldi entre Arenal Grande y Porongos",
+      "circuito": "CIRCUITO AV. GARIBALDI"
+    },
+    {
+      "lat": -34.8772,
+      "lon": -56.18003,
+      "db": 73,
+      "direccion": "General Flores entre Vilardebó y Colorado",
+      "circuito": "CIRCUITO AV. GRAL. FLORES"
+    },
+    {
+      "lat": -34.87706,
+      "lon": -56.08894,
+      "db": 71,
+      "direccion": "Avenida Bolivia entre Verona y Doctor Elías Regules",
+      "circuito": "CIRCUITO PARQUE RIVERA"
+    },
+    {
+      "lat": -34.87551,
+      "lon": -56.19932,
+      "db": 74,
+      "direccion": "Av. Agraciada entre Evaristo Aguiar y Grito de Asencio",
+      "circuito": "CIRCUITO AV. AGRACIADA"
+    },
+    {
+      "lat": -34.87549,
+      "lon": -56.2053,
+      "db": 71,
+      "direccion": "12 de Diciembre entre Cívicos y Eduardo Carbajal",
+      "circuito": "CIRCUITO VÍA FÉRREA"
+    },
+    {
+      "lat": -34.87482,
+      "lon": -56.18309,
+      "db": 73,
+      "direccion": "Garibaldi entre Pando y Marsella",
+      "circuito": "CIRCUITO AV. GARIBALDI"
+    },
+    {
+      "lat": -34.87477,
+      "lon": -56.15368,
+      "db": 76,
+      "direccion": "Bulevar Batlle y Ordoñez entre Emilio Raña y Thompson",
+      "circuito": "MERCADO MODELO"
+    },
+    {
+      "lat": -34.87461,
+      "lon": -56.13979,
+      "db": 75,
+      "direccion": "8 de Octubre entre Serrato y Miró",
+      "circuito": "CIRCUITO AV. 8 DE OCTUBRE"
+    },
+    {
+      "lat": -34.87433,
+      "lon": -56.17786,
+      "db": 80,
+      "direccion": "General Flores entre Gallinal y Melián Lafinur",
+      "circuito": "CIRCUITO AV. GRAL. FLORES"
+    },
+    {
+      "lat": -34.874,
+      "lon": -56.25024,
+      "db": 74,
+      "direccion": "Avenida Carlos María Ramírez entre Turquía y Grecia",
+      "circuito": "CIRCUITO CARLOS MARÍA RAMÍREZ"
+    },
+    {
+      "lat": -34.87389,
+      "lon": -56.16717,
+      "db": 75,
+      "direccion": "Bulevar Artigas entre Gallinal y Melián Lafinur",
+      "circuito": "CIRCUITO BULEVAR ARTIGAS"
+    },
+    {
+      "lat": -34.8735,
+      "lon": -56.13009,
+      "db": 74,
+      "direccion": "Camino Carrasco entre Schinca y Raissignier",
+      "circuito": "CIRCUITO CAMINO CARRASCO"
+    },
+    {
+      "lat": -34.87345,
+      "lon": -56.16011,
+      "db": 70,
+      "direccion": "Avenida Luis Alberto de Herrera y Chiavari y Canstatt",
+      "circuito": "CIRCUITO AV. LUIS ALBERTO DE HERRERA"
+    },
+    {
+      "lat": -34.87238,
+      "lon": -56.09598,
+      "db": 77,
+      "direccion": "Camino Carrasco entre Bolivia y Doctor Espinosa",
+      "circuito": "CIRCUITO CAMINO CARRASCO"
+    },
+    {
+      "lat": -34.8722,
+      "lon": -56.13591,
+      "db": 76,
+      "direccion": "8 de Octubre entre Pan de Azúcar y Silvestre Pérez",
+      "circuito": "CIRCUITO AV. 8 DE OCTUBRE"
+    },
+    {
+      "lat": -34.87215,
+      "lon": -56.20024,
+      "db": 75,
+      "direccion": "Bulevar Artigas entre Agraciada y Buricayupi",
+      "circuito": "CIRCUITO BULEVAR ARTIGAS"
+    },
+    {
+      "lat": -34.87202,
+      "lon": -56.11934,
+      "db": 74,
+      "direccion": "Camino Carrasco entre Estado de Israel y El Aguacero",
+      "circuito": "CIRCUITO CAMINO CARRASCO"
+    },
+    {
+      "lat": -34.87178,
+      "lon": -56.10203,
+      "db": 77,
+      "direccion": "Camino Carrasco entre Lugo y Joaquín de la Sagra",
+      "circuito": "CIRCUITO CAMINO CARRASCO"
+    },
+    {
+      "lat": -34.87176,
+      "lon": -56.11804,
+      "db": 75,
+      "direccion": "Camino Carrasco entre Roberto Berro y Veracierto",
+      "circuito": "CIRCUITO CAMINO CARRASCO"
+    },
+    {
+      "lat": -34.8716,
+      "lon": -56.19249,
+      "db": 76,
+      "direccion": "Bulevar Artigas entre Millán y Estole",
+      "circuito": "CIRCUITO BULEVAR ARTIGAS"
+    },
+    {
+      "lat": -34.8712,
+      "lon": -56.08774,
+      "db": 77,
+      "direccion": "Camino Carrasco entre Agrigento y Elías Regules",
+      "circuito": "CIRCUITO CAMINO CARRASCO"
+    },
+    {
+      "lat": -34.87079,
+      "lon": -56.18112,
+      "db": 76,
+      "direccion": "Bulevar Artigas entre San Martín y Pando",
+      "circuito": "CIRCUITO BULEVAR ARTIGAS"
+    },
+    {
+      "lat": -34.87046,
+      "lon": -56.11104,
+      "db": 77,
+      "direccion": "Camino Carrasco entre Pedro Cosio y Gallinal",
+      "circuito": "CIRCUITO CAMINO CARRASCO"
+    },
+    {
+      "lat": -34.87028,
+      "lon": -56.17385,
+      "db": 75,
+      "direccion": "Bulevar Artigas entre General Flores y Joaquín Requena",
+      "circuito": "CIRCUITO BULEVAR ARTIGAS"
+    },
+    {
+      "lat": -34.87025,
+      "lon": -56.20391,
+      "db": 76,
+      "direccion": "Av. Agraciada entre Hermanos Gil y Juan Carlos Blanco",
+      "circuito": "CIRCUITO AV. AGRACIADA"
+    },
+    {
+      "lat": -34.87005,
+      "lon": -56.16919,
+      "db": 75,
+      "direccion": "Bulevar Artigas entre Bulevar Artigas y Campisteguy",
+      "circuito": "CIRCUITO BULEVAR ARTIGAS"
+    },
+    {
+      "lat": -34.86996,
+      "lon": -56.20917,
+      "db": 70,
+      "direccion": "Capurro entre Dragones y Uruguayana",
+      "circuito": "CIRCUITO VÍA FÉRREA"
+    },
+    {
+      "lat": -34.86982,
+      "lon": -56.16715,
+      "db": 74,
+      "direccion": "Avenida Luis Alberto de Herrera entre Quijote y Varela",
+      "circuito": "CIRCUITO AV. LUIS ALBERTO DE HERRERA"
+    },
+    {
+      "lat": -34.86963,
+      "lon": -56.06817,
+      "db": 74,
+      "direccion": "Camino Carrasco entre Cooper y Adolfo Lapuente",
+      "circuito": "CIRCUITO CAMINO CARRASCO"
+    },
+    {
+      "lat": -34.8685,
+      "lon": -56.26193,
+      "db": 63,
+      "direccion": "Camino de las Tropas entre Pernambuco y Cno. La Paloma",
+      "circuito": "CIRCUITO CERRO"
+    },
+    {
+      "lat": -34.8681,
+      "lon": -56.16262,
+      "db": 75,
+      "direccion": "Varela entre Bulevar Batlle y Ordoñez y Valladolid",
+      "circuito": "CIRCUITO AV. LUIS ALBERTO DE HERRERA"
+    },
+    {
+      "lat": -34.8679,
+      "lon": -56.06287,
+      "db": 76,
+      "direccion": "Camino Carrasco entre Doctor Álvaro Vargas Guillemette y Edmundo Bianchi",
+      "circuito": "CIRCUITO CAMINO CARRASCO"
+    },
+    {
+      "lat": -34.86759,
+      "lon": -56.23792,
+      "db": 71,
+      "direccion": "Avenida Carlos María Ramírez entre Elbio Fernández y Humboldt",
+      "circuito": "CIRCUITO CARLOS MARÍA RAMÍREZ"
+    },
+    {
+      "lat": -34.8671,
+      "lon": -56.17194,
+      "db": 72,
+      "direccion": "General Flores entre Consulado y Luis Alberto de Herrera",
+      "circuito": "CIRCUITO AV. GRAL. FLORES"
+    },
+    {
+      "lat": -34.86665,
+      "lon": -56.13432,
+      "db": 75,
+      "direccion": "8 de Octubre entre Ramón Castriz y 20 de Febrero",
+      "circuito": "CIRCUITO AV. 8 DE OCTUBRE"
+    },
+    {
+      "lat": -34.86616,
+      "lon": -56.22818,
+      "db": 69,
+      "direccion": "Berinduague entre Real y Carlos Tellier",
+      "circuito": "LA TEJA"
+    },
+    {
+      "lat": -34.86577,
+      "lon": -56.1708,
+      "db": 77,
+      "direccion": "General Flores entre Quesada y Lamas",
+      "circuito": "CIRCUITO AV. GRAL. FLORES"
+    },
+    {
+      "lat": -34.8656,
+      "lon": -56.17398,
+      "db": 73,
+      "direccion": "Avenida Luis Alberto de Herrera entre Labandeira y H Gregorio",
+      "circuito": "CIRCUITO AV. LUIS ALBERTO DE HERRERA"
+    },
+    {
+      "lat": -34.86435,
+      "lon": -56.21002,
+      "db": 73,
+      "direccion": "Av. Agraciada entre Inocencio Raffo Arrosa y Valentín Gómez",
+      "circuito": "CIRCUITO AV. AGRACIADA"
+    },
+    {
+      "lat": -34.86431,
+      "lon": -56.19288,
+      "db": 74,
+      "direccion": "Avenida Millán entre Ramón Estomba y Dr. Carlos Vaz Ferreira",
+      "circuito": "CIRCUITO ATAHUALPA"
+    },
+    {
+      "lat": -34.86401,
+      "lon": -56.18267,
+      "db": 70,
+      "direccion": "Brazo Oriental entre Regimiento 9 y Luis Alberto de Herrera",
+      "circuito": "BRAZO ORIENTAL"
+    },
+    {
+      "lat": -34.86368,
+      "lon": -56.07589,
+      "db": 66,
+      "direccion": "Camino Pichincha entre Avenida del Ombú y Formentor",
+      "circuito": "BAÑADOS DE CARRASCO"
+    },
+    {
+      "lat": -34.86305,
+      "lon": -56.19026,
+      "db": 62,
+      "direccion": "Carmelo entre Chuy y Ramón Estomba",
+      "circuito": "CIRCUITO ATAHUALPA"
+    },
+    {
+      "lat": -34.86197,
+      "lon": -56.15149,
+      "db": 75,
+      "direccion": "Avenida Dámaso Antonio Larrañaga entre Serrato y Capitán Hipólito Mordeille",
+      "circuito": "VILLA ESPAÑOLA"
+    },
+    {
+      "lat": -34.86187,
+      "lon": -56.1847,
+      "db": 72,
+      "direccion": "Avenida Luis Alberto de Herrera entre Avenida Burgues y Ramón Márquez",
+      "circuito": "CIRCUITO AV. LUIS ALBERTO DE HERRERA"
+    },
+    {
+      "lat": -34.86173,
+      "lon": -56.23073,
+      "db": 74,
+      "direccion": "Avenida Carlos María Ramírez entre Real y Florentino Ameghino",
+      "circuito": "CIRCUITO CARLOS MARÍA RAMÍREZ"
+    },
+    {
+      "lat": -34.85977,
+      "lon": -56.13364,
+      "db": 72,
+      "direccion": "8 de Octubre entre Capdehourat y Vigodet",
+      "circuito": "CIRCUITO AV. 8 DE OCTUBRE"
+    },
+    {
+      "lat": -34.85905,
+      "lon": -56.2371,
+      "db": 64,
+      "direccion": "Antonio Zubillaga entre Tellier y Gral. Muñoz",
+      "circuito": "TRES OMBÚES"
+    },
+    {
+      "lat": -34.85822,
+      "lon": -56.20477,
+      "db": 68,
+      "direccion": "Av. Buschental entre Av. Atilio Pelosi y Cv del Ruedo",
+      "circuito": "CIRCUITO PARQUE PRADO"
+    },
+    {
+      "lat": -34.8581,
+      "lon": -56.19333,
+      "db": 79,
+      "direccion": "Avenida Luis Alberto de Herrera entre Francisco Bicudo y Joaquín Suárez",
+      "circuito": "CIRCUITO AV. LUIS ALBERTO DE HERRERA"
+    },
+    {
+      "lat": -34.85732,
+      "lon": -56.1994,
+      "db": 69,
+      "direccion": "Avenida Luis Alberto de Herrera entre C. Francisco Torres y Baltasar Ojeda",
+      "circuito": "CIRCUITO PARQUE PRADO"
+    },
+    {
+      "lat": -34.85713,
+      "lon": -56.22507,
+      "db": 71,
+      "direccion": "Avenida Carlos María Ramírez entre Dr. Basagoity y Carlos de la Vega",
+      "circuito": "CIRCUITO CARLOS MARÍA RAMÍREZ"
+    },
+    {
+      "lat": -34.85688,
+      "lon": -56.16421,
+      "db": 78,
+      "direccion": "General Flores entre Zúñiga y Hortiguera",
+      "circuito": "CIRCUITO AV. GRAL. FLORES"
+    },
+    {
+      "lat": -34.85676,
+      "lon": -56.21633,
+      "db": 62,
+      "direccion": "Santa Lucía entre Marcos Muñoz y Francisco Piria",
+      "circuito": "CIRCUITO VÍA FÉRREA"
+    },
+    {
+      "lat": -34.85602,
+      "lon": -56.13222,
+      "db": 75,
+      "direccion": "8 de Octubre entre Pirineos y Veracierto",
+      "circuito": "CIRCUITO AV. 8 DE OCTUBRE"
+    },
+    {
+      "lat": -34.85588,
+      "lon": -56.17417,
+      "db": 78,
+      "direccion": "San Martín entre Bv. Batlle y Ordoñez y Chipre",
+      "circuito": "SAN MARTÍN"
+    },
+    {
+      "lat": -34.85306,
+      "lon": -56.2088,
+      "db": 71,
+      "direccion": "Camino Castro entre Pena y Mendilaharsu",
+      "circuito": "CIRCUITO PARQUE PRADO"
+    },
+    {
+      "lat": -34.85201,
+      "lon": -56.15992,
+      "db": 74,
+      "direccion": "General Flores entre Honduras y Londres",
+      "circuito": "CIRCUITO AV. GRAL. FLORES"
+    },
+    {
+      "lat": -34.8504,
+      "lon": -56.18526,
+      "db": 73,
+      "direccion": "Bv. José Batlle y Ordoñez entre Pantaleón Artigas y Gregorio Sanabria",
+      "circuito": "AIRES PUROS"
+    },
+    {
+      "lat": -34.85023,
+      "lon": -56.20155,
+      "db": 75,
+      "direccion": "Camino Castro entre Escalada y María Orticoechea",
+      "circuito": "PASO DE LAS DURANAS"
+    },
+    {
+      "lat": -34.84945,
+      "lon": -56.22348,
+      "db": 75,
+      "direccion": "Corredor Garzón entre General Hornos y Emancipación",
+      "circuito": "BELVEDERE"
+    },
+    {
+      "lat": -34.84891,
+      "lon": -56.21646,
+      "db": 66,
+      "direccion": "Carlos María de Pena entre Coronel Atanasildo Suárez y Claudio Ptolomeo",
+      "circuito": "CIRCUITO VÍA FÉRREA"
+    },
+    {
+      "lat": -34.84524,
+      "lon": -56.21773,
+      "db": 73,
+      "direccion": "Islas Canarias entre Claudio Ptolomeo y Fray Generoso Pérez",
+      "circuito": "CIRCUITO VÍA FÉRREA"
+    },
+    {
+      "lat": -34.8431,
+      "lon": -56.24103,
+      "db": 66,
+      "direccion": "Santa Lucía entre Honor y Turubí",
+      "circuito": "CIRCUITO NUEVO PARÍS"
+    },
+    {
+      "lat": -34.84204,
+      "lon": -56.14318,
+      "db": 73,
+      "direccion": "José María Guerra entre Juan Victoria y Avenida Mariano Estapé",
+      "circuito": "ITUZAINGÓ"
+    },
+    {
+      "lat": -34.84021,
+      "lon": -56.12252,
+      "db": 76,
+      "direccion": "Camino Maldonado entre Libia y Rafael",
+      "circuito": "CIRCUITO AV. 8 DE OCTUBRE"
+    },
+    {
+      "lat": -34.83897,
+      "lon": -56.22906,
+      "db": 68,
+      "direccion": "Av. Islas Canarias entre Alcides de María y Cristóbal Cayetano de Herrera",
+      "circuito": "CIRCUITO NUEVO PARÍS"
+    },
+    {
+      "lat": -34.83707,
+      "lon": -56.26983,
+      "db": 72,
+      "direccion": "Avenida Luis Batlle Berres entre Camino Tomkinson y José María Artigas",
+      "circuito": "PASO DE LA ARENA"
+    },
+    {
+      "lat": -34.83591,
+      "lon": -56.21944,
+      "db": 59,
+      "direccion": "Millán entre Avenida Sayago y Continuación Quicuyo",
+      "circuito": "CIRCUITO VÍA FÉRREA"
+    },
+    {
+      "lat": -34.83471,
+      "lon": -56.12355,
+      "db": 74,
+      "direccion": "Rafael entre Venecia y Copérnico",
+      "circuito": "JARDINES DEL HIPÓDROMO"
+    },
+    {
+      "lat": -34.83441,
+      "lon": -56.20848,
+      "db": 74,
+      "direccion": "Bulevar Batlle y Ordoñez entre Molinos de Raffo y Pastor",
+      "circuito": "SAYAGO"
+    },
+    {
+      "lat": -34.83395,
+      "lon": -56.11183,
+      "db": 74,
+      "direccion": "8 de Octubre (Ruta 8) entre Rosario y Andrés H. Lerena Acevedo",
+      "circuito": "CIRCUITO AV. 8 DE OCTUBRE"
+    },
+    {
+      "lat": -34.82945,
+      "lon": -56.23019,
+      "db": 74,
+      "direccion": "Av. Millán entre Carafí y Juan Bautista Saá",
+      "circuito": "CONCILIACIÓN"
+    },
+    {
+      "lat": -34.82892,
+      "lon": -56.1408,
+      "db": 75,
+      "direccion": "Av. José Belloni entre Jorge Pacheco y Adolfo Artagaveytia",
+      "circuito": "PIEDRAS BLANCAS"
+    },
+    {
+      "lat": -34.82101,
+      "lon": -56.0998,
+      "db": 72,
+      "direccion": "Ruta 8 entre Aries y Camino Cardeña",
+      "circuito": "CIRCUITO AV. 8 DE OCTUBRE"
+    },
+    {
+      "lat": -34.82032,
+      "lon": -56.21902,
+      "db": 71,
+      "direccion": "Waldemar Hansen entre Máximo Santos y Camino Edison",
+      "circuito": "CIRCUITO VÍA FÉRREA"
+    },
+    {
+      "lat": -34.81669,
+      "lon": -56.13928,
+      "db": 77,
+      "direccion": "Av. José Belloni entre Previsión y Domingo Arenas",
+      "circuito": "JOSÉ BELLONI"
+    },
+    {
+      "lat": -34.81292,
+      "lon": -56.21962,
+      "db": 63,
+      "direccion": "Avenida General Eugenio Garzón entre Checoslovaquia y Camino Casavalle",
+      "circuito": "CIRCUITO VÍA FÉRREA"
+    },
+    {
+      "lat": -34.81098,
+      "lon": -56.21485,
+      "db": 64,
+      "direccion": "Cno. Hudson entre B. Vicuña Mackenna y Yuty",
+      "circuito": "CASABÓ"
+    },
+    {
+      "lat": -34.80431,
+      "lon": -56.22118,
+      "db": 79,
+      "direccion": "Camino Besnes e Irigoyen entre Iris y Albérico Passadore",
+      "circuito": "CIRCUITO VÍA FÉRREA"
+    },
+    {
+      "lat": -34.8033,
+      "lon": -56.22955,
+      "db": 69,
+      "direccion": "Avenida Lezica entre Calderón de la Barca y Yegros",
+      "circuito": "CIRCUITO LEZICA"
+    },
+    {
+      "lat": -34.8032,
+      "lon": -56.0884,
+      "db": 76,
+      "direccion": "Ruta 8 entre Pasaje B y Repetto",
+      "circuito": "CIRCUITO AV. 8 DE OCTUBRE"
+    },
+    {
+      "lat": -34.79881,
+      "lon": -56.24515,
+      "db": 72,
+      "direccion": "Avenida Lezica entre Santa María y Niña",
+      "circuito": "CIRCUITO LEZICA"
+    }
+  ]
+}
