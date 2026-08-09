@@ -1,0 +1,96 @@
+/* ── Header flotante (glass) ──────────────────────────────── */
+.appbar {
+  position: absolute;
+  top: calc(var(--appbar-top) + env(safe-area-inset-top, 0px));
+  left: 12px;
+  right: 12px;
+  z-index: 1400;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.appbar-content {
+  pointer-events: auto;
+  width: 100%;
+  max-width: 1280px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 6px 10px 6px 12px;
+  background: var(--glass-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-nav);
+  box-shadow: var(--shadow-2);
+  backdrop-filter: blur(16px) saturate(1.2);
+  -webkit-backdrop-filter: blur(16px) saturate(1.2);
+}
+
+.appbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.appbar-titulos {
+  min-width: 0;
+  line-height: 1.1;
+}
+
+.appbar-titulo {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.appbar-subtitulo {
+  margin: 3px 0 0;
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--text-2);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.appbar-derecha {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.appbar-accion {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border);
+  background: var(--glass-bg-fuerte);
+  color: var(--text);
+  transition: background 0.2s ease, transform 0.15s ease, border-color 0.2s ease;
+}
+
+.appbar-accion:hover {
+  background: var(--surface-2);
+  border-color: var(--border-strong);
+}
+
+.appbar-accion:active {
+  transform: scale(0.94);
+}
+
+.appbar-accion--activo {
+  color: var(--primary);
+  border-color: rgba(59, 99, 224, 0.5);
+}
+

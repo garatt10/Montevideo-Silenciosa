@@ -4,7 +4,7 @@ import { ChevronDown, FilePlus, MapPin, Mic, X } from 'lucide-react'
 import type { PuntoRuido } from '../data/ruido'
 import { CENTRO_MONTEVIDEO, zonaMasCercana } from '../data/contextoRuido'
 import { estimarRuidoEnUbicacion } from '../data/ruido'
-import { colorDB, etiquetaDB } from '../data/coloresRuido'
+import { colorDB, etiquetaDB, explicacionDB } from '../data/coloresRuido'
 
 type PanelResumenProps = {
   puntos: PuntoRuido[]
@@ -66,33 +66,46 @@ function PanelResumen({ puntos, ubicacion }: PanelResumenProps) {
               <strong>{titulo}</strong>
               <span>{contexto}</span>
             </div>
-            <button
-              className="panel-resumen-close"
-              onClick={() => setAbierto(false)}
-              aria-label="Cerrar panel"
-              type="button"
-            >
-              <X size={18} />
-            </button>
-          </div>
-
-          <div className="panel-resumen-ahora">
-            <span className="panel-resumen-punto" style={{ background: colorDB(estimacion.decibeles) }} />
-            <div>
-              <span className="panel-resumen-zona">{zona}</span>
-              <strong className="panel-resumen-db" style={{ color: colorDB(estimacion.decibeles) }}>
-                {estimacion.decibeles} <small>dB</small>
-              </strong>
-              <span className="panel-resumen-etiqueta">{etiquetaDB(estimacion.decibeles)}</span>
+            <div className="panel-resumen-head-acciones">
+              <span className="chip-origen">Estimación</span>
+              <button
+                className="panel-resumen-close"
+                onClick={() => setAbierto(false)}
+                aria-label="Cerrar panel"
+                type="button"
+              >
+                <X size={18} />
+              </button>
             </div>
           </div>
 
+          <div className="panel-resumen-ahora">
+            {estimacion ? (
+              <>
+                <span className="panel-resumen-punto" style={{ background: colorDB(estimacion.decibeles) }} />
+                <div>
+                  <span className="panel-resumen-zona">{zona}</span>
+                  <strong className="panel-resumen-db" style={{ color: colorDB(estimacion.decibeles) }}>
+                    {estimacion.decibeles} <small>dB</small>
+                  </strong>
+                  <span className="panel-resumen-etiqueta" style={{ color: colorDB(estimacion.decibeles) }}>
+                    {etiquetaDB(estimacion.decibeles)} · {explicacionDB(estimacion.decibeles)}
+                  </span>
+                </div>
+              </>
+            ) : (
+              <p className="panel-resumen-vacio">
+                Sin puntos visibles con los filtros actuales. Ajustá los filtros o el período para estimar el ruido.
+              </p>
+            )}
+          </div>
+
           <p className="panel-resumen-nota">
-            <MapPin size={14} /> Dato estimado a partir de {puntos.length} puntos visibles.
+            <MapPin size={14} /> Valor estimado a partir de los {puntos.length} puntos visibles.
           </p>
           <div className="panel-resumen-fuentes">
             <span><b>{puntosOficiales}</b> referencia oficial 2025</span>
-            <span><b>{medicionesComunidad}</b> mediciones comunitarias verificadas</span>
+            <span><b>{medicionesComunidad}</b> mediciones comunitarias</span>
           </div>
 
           {ranking.length > 0 ? (
@@ -137,12 +150,25 @@ function PanelResumen({ puntos, ubicacion }: PanelResumenProps) {
   return (
     <div className="panel-resumen">
       <button className="panel-resumen-pill" onClick={() => setAbierto(true)} type="button">
-        <span className="panel-resumen-punto" style={{ background: colorDB(estimacion.decibeles), color: colorDB(estimacion.decibeles) }} />
+        <span
+          className="panel-resumen-punto"
+          style={
+            estimacion
+              ? { background: colorDB(estimacion.decibeles), color: colorDB(estimacion.decibeles) }
+              : { background: 'var(--text-3)' }
+          }
+        />
         <span className="panel-resumen-pill-zona">{ubicacion ? zona : '¿Cómo está tu zona?'}</span>
-        <strong className="panel-resumen-pill-db" style={{ color: colorDB(estimacion.decibeles) }}>
-          {estimacion.decibeles} dB
-        </strong>
-        <span className="panel-resumen-pill-etiqueta">Ver detalles</span>
+        {estimacion ? (
+          <strong className="panel-resumen-pill-db" style={{ color: colorDB(estimacion.decibeles) }}>
+            {estimacion.decibeles} <small>dB</small>
+          </strong>
+        ) : (
+          <strong className="panel-resumen-pill-db">— dB</strong>
+        )}
+        <span className="panel-resumen-pill-etiqueta">
+          {estimacion ? etiquetaDB(estimacion.decibeles) : 'Sin puntos visibles'}
+        </span>
         <ChevronDown size={16} className="panel-resumen-pill-icon" />
       </button>
     </div>

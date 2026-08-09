@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { CircleMarker, Popup, useMap } from 'react-leaflet'
 import { LocateFixed, MapPin, X } from 'lucide-react'
 import type { PuntoRuido } from '../data/ruido'
@@ -17,6 +17,13 @@ function UbicacionUsuario({ puntos, onPosicionChange }: UbicacionUsuarioProps) {
   const [estado, setEstado] = useState<EstadoUbicacion>('idle')
   const [posicion, setPosicion] = useState<[number, number] | null>(null)
   const [mensaje, setMensaje] = useState('')
+  const montadoRef = useRef(true)
+
+  useEffect(() => {
+    return () => {
+      montadoRef.current = false
+    }
+  }, [])
 
   const estimacion = posicion ? estimarRuidoEnUbicacion(posicion, puntos) : null
 
@@ -31,6 +38,7 @@ function UbicacionUsuario({ puntos, onPosicionChange }: UbicacionUsuarioProps) {
     setMensaje('')
     navigator.geolocation.getCurrentPosition(
       (position) => {
+        if (!montadoRef.current) return
         const siguiente: [number, number] = [
           position.coords.latitude,
           position.coords.longitude,
@@ -41,6 +49,7 @@ function UbicacionUsuario({ puntos, onPosicionChange }: UbicacionUsuarioProps) {
         map.flyTo(siguiente, Math.max(map.getZoom(), 14), { duration: 0.8 })
       },
       () => {
+        if (!montadoRef.current) return
         setEstado('error')
         setMensaje('No se pudo obtener tu ubicación. Podés seguir usando zona manual.')
       },
@@ -71,7 +80,7 @@ function UbicacionUsuario({ puntos, onPosicionChange }: UbicacionUsuarioProps) {
           {estado === 'ok' ? <X size={18} /> : <LocateFixed size={18} />}
         </button>
 
-        {(estado === 'buscando' || estado === 'error' || estimacion) && (
+        {(estado === 'buscando' || estado === 'error' || posicion) && (
           <div className="ubicacion-panel">
             <div className="ubicacion-panel-head">
               <MapPin size={16} />
@@ -100,6 +109,9 @@ function UbicacionUsuario({ puntos, onPosicionChange }: UbicacionUsuarioProps) {
                 </small>
               </>
             )}
+            {posicion && !estimacion && (
+              <p>Sin datos de ruido en esta zona con los filtros actuales.</p>
+            )}
           </div>
         )}
       </div>
@@ -118,7 +130,7 @@ function UbicacionUsuario({ puntos, onPosicionChange }: UbicacionUsuarioProps) {
           <Popup>
             <strong>Tu ubicación</strong>
             <br />
-            {estimacion ? `${estimacion.decibeles} dB estimados` : 'Estimando ruido...'}
+            {estimacion ? `${estimacion.decibeles} dB estimados` : 'Sin datos de ruido aquí'}
           </Popup>
         </CircleMarker>
       )}

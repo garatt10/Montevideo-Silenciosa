@@ -49,7 +49,7 @@ function GraficoEvolucion({ mediciones }: GraficoEvolucionProps) {
             <stop offset="100%" stopColor={color} stopOpacity="0.02" />
           </linearGradient>
         </defs>
-        {[MIN_DB, 55, 70, 80, MAX_DB].map(nivel => (
+        {[MIN_DB, MAX_DB].map(nivel => (
           <line
             key={nivel}
             className="grafico-evolucion-grid"
@@ -58,6 +58,25 @@ function GraficoEvolucion({ mediciones }: GraficoEvolucionProps) {
             y1={y(nivel)}
             y2={y(nivel)}
           />
+        ))}
+        {[55, 70, 80].map(nivel => (
+          <g key={nivel}>
+            <line
+              className="grafico-evolucion-referencia"
+              x1={PAD}
+              x2={W - PAD}
+              y1={y(nivel)}
+              y2={y(nivel)}
+            />
+            <text
+              className="grafico-evolucion-ref-label"
+              x={W - PAD}
+              y={y(nivel) - 3}
+              textAnchor="end"
+            >
+              {nivel} dB
+            </text>
+          </g>
         ))}
         <path d={area} fill={`url(#${gradienteId})`} />
         <path d={linea} className="grafico-evolucion-linea" style={{ stroke: color }} fill="none" />

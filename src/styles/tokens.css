@@ -1,0 +1,88 @@
+/* ═══════════════════════════════════════════════════════════
+   Montevideo Silenciosa — Design System
+   Oscuro por defecto · Sistema 8px · Inter · Glassmorphism
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── Tokens (modo oscuro por defecto) ─────────────────────── */
+:root {
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  --bg: #090b12;
+  --surface: #111827;
+  --surface-2: #161f31;
+  --surface-3: #1c2740;
+
+  --primary: #3b63e0;
+  --primary-hover: #4b70e8;
+  --primary-active: #3255c9;
+  --primary-soft: rgba(59, 99, 224, 0.16);
+
+  --success: #27c46a;
+  --warning: #ffc857;
+  --danger: #ff5c5c;
+  --info: #4fc3f7;
+
+  --border: rgba(255, 255, 255, 0.06);
+  --border-strong: rgba(255, 255, 255, 0.14);
+  --text: #ffffff;
+  --text-2: rgba(255, 255, 255, 0.7);
+  --text-3: rgba(255, 255, 255, 0.55);
+
+  --glass-bg: rgba(17, 24, 39, 0.78);
+  --glass-bg-fuerte: rgba(17, 24, 39, 0.92);
+
+  /* Escala de ruido de la app (green → red) */
+  --ruido-bajo: #10b981;
+  --ruido-moderado: #eab308;
+  --ruido-alto: #f97316;
+  --ruido-critico: #ef4444;
+
+  /* Radios moderados (sm 8-10 · md 12-14 · lg 16-18 · xl 20-24) */
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 18px;
+  --radius-xl: 20px;
+  --radius-input: var(--radius-md);
+  --radius-btn: var(--radius-md);
+  --radius-card: var(--radius-lg);
+  --radius-sidebar: var(--radius-xl);
+  --radius-nav: var(--radius-xl);
+  --radius-sheet: 24px;
+  --radius-full: 999px;
+
+  /* Sombras suaves y contenidas */
+  --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.18), 0 2px 6px rgba(0, 0, 0, 0.12);
+  --shadow-2: 0 4px 14px rgba(0, 0, 0, 0.2), 0 1px 4px rgba(0, 0, 0, 0.12);
+  --shadow-3: 0 12px 32px rgba(0, 0, 0, 0.3), 0 3px 10px rgba(0, 0, 0, 0.16);
+
+  --appbar-top: 12px;
+  --appbar-height: 56px;
+  --nav-height: 68px;
+  --nav-bottom: calc(10px + env(safe-area-inset-bottom, 0px));
+}
+
+.modo-claro {
+  --bg: #f3f5fa;
+  --surface: #ffffff;
+  --surface-2: #eef2f9;
+  --surface-3: #e2e8f4;
+
+  --primary: #3b63e0;
+  --primary-hover: #4b70e8;
+  --primary-active: #3255c9;
+  --primary-soft: rgba(59, 99, 224, 0.14);
+
+  --border: rgba(15, 23, 42, 0.08);
+  --border-strong: rgba(15, 23, 42, 0.16);
+  --text: #0f172a;
+  --text-2: rgba(15, 23, 42, 0.7);
+  --text-3: rgba(15, 23, 42, 0.66);
+
+  --glass-bg: rgba(255, 255, 255, 0.86);
+  --glass-bg-fuerte: rgba(255, 255, 255, 0.96);
+
+  --shadow-1: 0 1px 2px rgba(15, 23, 42, 0.05), 0 2px 6px rgba(15, 23, 42, 0.06);
+  --shadow-2: 0 4px 14px rgba(15, 23, 42, 0.09), 0 1px 4px rgba(15, 23, 42, 0.05);
+  --shadow-3: 0 12px 32px rgba(15, 23, 42, 0.14), 0 3px 10px rgba(15, 23, 42, 0.07);
+}
+

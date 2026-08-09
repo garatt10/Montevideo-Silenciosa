@@ -8,5 +8,8 @@ export default defineConfig({
     host: true,
     port: 5173,
     allowedHosts: ['.loca.lt']
+  },
+  build: {
+    chunkSizeWarningLimit: 1400
   }
 })

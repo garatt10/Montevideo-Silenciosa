@@ -1,0 +1,32 @@
+/* ── Layout ───────────────────────────────────────────────── */
+.layout {
+  position: relative;
+  height: 100dvh;
+  overflow: hidden;
+  background: var(--bg);
+}
+
+.layout-content {
+  position: relative;
+  height: 100%;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding-top: calc(var(--appbar-top) + 68px + env(safe-area-inset-top, 0px));
+  padding-bottom: calc(var(--nav-height) + var(--nav-bottom) + 20px);
+}
+
+.page-body-center {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 24px;
+  text-align: center;
+}
+

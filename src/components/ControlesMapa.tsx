@@ -1,5 +1,5 @@
 import type { SyntheticEvent } from 'react'
-import { Filter, Layers } from 'lucide-react'
+import { Filter, Layers, X } from 'lucide-react'
 import { TIPOS_RUIDO, type TiempoMapa } from '../data/contextoRuido'
 import type { TipoRuido } from '../data/ruido'
 
@@ -13,6 +13,7 @@ type ControlesMapaProps = {
   onTiempoChange: (tiempo: TiempoMapa) => void
   onTipoChange: (tipo: TipoRuido | 'todos') => void
   onMostrarLugaresChange: (mostrar: boolean) => void
+  onCerrar: () => void
 }
 
 function detenerGestoMapa(event: SyntheticEvent) {
@@ -29,6 +30,7 @@ function ControlesMapa({
   onTiempoChange,
   onTipoChange,
   onMostrarLugaresChange,
+  onCerrar,
 }: ControlesMapaProps) {
   if (!abierto) return null
 
@@ -43,8 +45,13 @@ function ControlesMapa({
     >
       <div className="mapa-panel">
         <div className="mapa-panel-head">
-          <strong>Mapa de ruido</strong>
-          <span>{tiempoActivo.label} · {totalPuntos} puntos</span>
+          <div>
+            <strong>Filtros del mapa</strong>
+            <span>{tiempoActivo.label} · {totalPuntos} puntos</span>
+          </div>
+          <button className="mapa-panel-cerrar" onClick={onCerrar} type="button" aria-label="Cerrar filtros">
+            <X size={18} />
+          </button>
         </div>
 
         <div className="mapa-control-bloque">
@@ -56,6 +63,7 @@ function ControlesMapa({
                 className={`timeline-opcion ${tiempoActivo.id === item.id ? 'timeline-opcion--activa' : ''}`}
                 onClick={() => onTiempoChange(item)}
                 type="button"
+                aria-pressed={tiempoActivo.id === item.id}
               >
                 <span>{item.label}</span>
                 <small>{item.detalle}</small>
@@ -66,14 +74,15 @@ function ControlesMapa({
 
         <div className="mapa-control-bloque">
           <div className="mapa-control-titulo">
-            <Filter size={15} />
-            Filtros
+            <Filter size={14} />
+            Tipo de ruido
           </div>
           <div className="filtro-chips">
             <button
               className={`filtro-chip ${tipoActivo === 'todos' ? 'filtro-chip--activo' : ''}`}
               onClick={() => onTipoChange('todos')}
               type="button"
+              aria-pressed={tipoActivo === 'todos'}
             >
               Todos
             </button>
@@ -83,6 +92,7 @@ function ControlesMapa({
                 className={`filtro-chip ${tipoActivo === tipo.id ? 'filtro-chip--activo' : ''}`}
                 onClick={() => onTipoChange(tipo.id)}
                 type="button"
+                aria-pressed={tipoActivo === tipo.id}
               >
                 {tipo.label}
               </button>
@@ -94,9 +104,14 @@ function ControlesMapa({
           className={`mapa-toggle ${mostrarLugares ? 'mapa-toggle--activo' : ''}`}
           onClick={() => onMostrarLugaresChange(!mostrarLugares)}
           type="button"
+          aria-pressed={mostrarLugares}
         >
           <Layers size={16} />
           <span>{mostrarLugares ? 'Ocultar lugares' : 'Mostrar lugares'}</span>
+        </button>
+
+        <button className="btn-primario mapa-filtros-aplicar" onClick={onCerrar} type="button">
+          Ver {totalPuntos} punto{totalPuntos === 1 ? '' : 's'}
         </button>
       </div>
     </div>

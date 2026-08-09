@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { AlertTriangle } from 'lucide-react'
 import { FUENTE_ACUSTICO_2025 } from '../data/mapaAcustico2025'
 
 const ENLACES = [
@@ -39,111 +40,132 @@ function Metodologia() {
           </p>
         </header>
 
-        <section className="metodologia-seccion">
-          <h2>La fuente del mapa</h2>
+        <div className="metodologia-aviso">
+          <AlertTriangle size={18} />
           <p>
-            El mapa usa mediciones de campo del <strong>{FUENTE_ACUSTICO_2025.titulo}</strong>,
-            elaborado por el <strong>{FUENTE_ACUSTICO_2025.institucion}</strong> con{' '}
-            {FUENTE_ACUSTICO_2025.periodo}.
+            El mapa muestra <strong>estimaciones</strong> del Mapa Acústico 2025, no el ruido en
+            tiempo real. Sirve para comparar zonas, no reemplaza un informe acústico profesional.
           </p>
-          <p>
-            El estudio relevó <strong>250 puntos</strong> de monitoreo en las 16 áreas del
-            territorio. Esta app muestra <strong>246 de esos puntos</strong>: los que pudieron
-            recuperarse de la versión pública del mapa interactivo (ver «Cómo se actualizaron los
-            datos»). Los valores son niveles de presión sonora <strong>LAeq</strong> en decibeles
-            (dB(A)).
-          </p>
-          <p>
-            Los niveles más altos se registran en grandes avenidas y corredores de transporte
-            (72–78 dB(A)), con picos por encima de los 100 dB(A) asociados sobre todo a motos con
-            escapes modificados.
-          </p>
-        </section>
+        </div>
 
-        <section className="metodologia-seccion">
-          <h2>¿Qué es el LAeq y el dB(A)?</h2>
-          <p>
-            El <strong>LAeq</strong> (nivel sonoro continuo equivalente ponderado A) es el promedio
-            energético del ruido durante el período de medición: un único número que resume cómo de
-            fuerte fue el sonido. La <strong>ponderación A</strong> (de ahí «dB(A)») atenúa las
-            frecuencias graves y agudas para imitar la sensibilidad real del oído humano.
-          </p>
-          <p>
-            Una guía aproximada: por debajo de 55 dB(A) un ambiente se percibe tranquilo; de
-            60–65 dB(A) hay conversación normal de fondo; de 70–75 dB(A) el ruido ya resulta
-            molesto y dificulta la concentración; y por encima de 80 dB(A) la exposición sostenida
-            puede dañar la audición.
-          </p>
-        </section>
+        <div className="metodologia-acordeones">
+          <details className="metodologia-acordeon" open>
+            <summary>La fuente del mapa</summary>
+            <div className="metodologia-acordeon-contenido">
+              <p>
+                El mapa usa mediciones de campo del <strong>{FUENTE_ACUSTICO_2025.titulo}</strong>,
+                elaborado por el <strong>{FUENTE_ACUSTICO_2025.institucion}</strong> con{' '}
+                {FUENTE_ACUSTICO_2025.periodo}.
+              </p>
+              <p>
+                El estudio relevó <strong>250 puntos</strong> de monitoreo en las 16 áreas del
+                territorio. Esta app muestra <strong>246 de esos puntos</strong>: los que pudieron
+                recuperarse de la versión pública del mapa interactivo. Los valores son niveles de
+                presión sonora <strong>LAeq</strong> en decibeles (dB(A)).
+              </p>
+              <p>
+                Los niveles más altos se registran en grandes avenidas y corredores de transporte
+                (72–78 dB(A)), con picos por encima de los 100 dB(A) asociados sobre todo a motos con
+                escapes modificados.
+              </p>
+            </div>
+          </details>
 
-        <section className="metodologia-seccion">
-          <h2>Qué muestra el mapa de la app</h2>
-          <p>
-            La superficie de color se calcula por <strong>interpolación</strong> entre los puntos de
-            medición: cada celda del mapa pondera los puntos cercanos con mayor peso a los más
-            próximos (inverse distance weighting). Entre dos puntos, el color varía de forma
-            continua siguiendo la escala de la app (verde → amarillo → naranja → rojo).
-          </p>
-          <p>
-            La <strong>estimación en una ubicación</strong> aplica la misma idea para mostrar un
-            valor aproximado de ruido, y la línea de tiempo ajusta ese valor según la hora del día
-            como una <strong>estimación</strong> (el estudio mide un promedio general, no cada hora).
-          </p>
-          <p>
-            Los valores son de referencia: sirven para comparar zonas y tomar decisiones
-            (elegir un recorrido, exigir controles), no reemplazan un informe acústico profesional.
-          </p>
-        </section>
+          <details className="metodologia-acordeon">
+            <summary>¿Qué es el LAeq y el dB(A)?</summary>
+            <div className="metodologia-acordeon-contenido">
+              <p>
+                El <strong>LAeq</strong> (nivel sonoro continuo equivalente ponderado A) es el promedio
+                energético del ruido durante el período de medición: un único número que resume cómo de
+                fuerte fue el sonido. La <strong>ponderación A</strong> (de ahí «dB(A)») atenúa las
+                frecuencias graves y agudas para imitar la sensibilidad real del oído humano.
+              </p>
+              <p>
+                Una guía aproximada: por debajo de 55 dB(A) un ambiente se percibe tranquilo; de
+                60–65 dB(A) hay conversación normal de fondo; de 70–75 dB(A) el ruido ya resulta
+                molesto y dificulta la concentración; y por encima de 80 dB(A) la exposición sostenida
+                puede dañar la audición.
+              </p>
+            </div>
+          </details>
 
-        <section className="metodologia-seccion">
-          <h2>Límites de medir con el celular</h2>
-          <p>
-            La función de medición de la app usa el micrófono del teléfono, que <strong>no está
-            calibrado</strong>. Los valores obtenidos son aproximados y pueden variar según el
-            modelo, la posición y el viento. Al medir:
-          </p>
-          <ul>
-            <li>Buscá un ambiente sin viento y alejá el teléfono del cuerpo y de la ropa.</li>
-            <li>Evitá tapar el micrófono con la mano.</li>
-            <li>Mantené la medición al menos 15–30 segundos para obtener un promedio más estable.</li>
-            <li>Compará siempre con el mismo teléfono para que las diferencias sean coherentes.</li>
-          </ul>
-          <p>
-            Una forma de calibrar de manera relativa: en un ambiente que conozcas (por ejemplo una
-            biblioteca o un punto del mapa acústico oficial), anotá qué valor marca tu teléfono y
-            usá esa diferencia como referencia.
-          </p>
-        </section>
+          <details className="metodologia-acordeon">
+            <summary>Qué muestra el mapa de la app</summary>
+            <div className="metodologia-acordeon-contenido">
+              <p>
+                La superficie de color se calcula por <strong>interpolación</strong> entre los puntos de
+                medición: cada celda del mapa pondera los puntos cercanos con mayor peso a los más
+                próximos (inverse distance weighting). Entre dos puntos, el color varía de forma
+                continua siguiendo la escala de la app (verde → amarillo → naranja → rojo).
+              </p>
+              <p>
+                La <strong>estimación en una ubicación</strong> aplica la misma idea para mostrar un
+                valor aproximado de ruido, y la línea de tiempo ajusta ese valor según la hora del día
+                como una <strong>estimación</strong> (el estudio mide un promedio general, no cada hora).
+              </p>
+              <p>
+                Los valores son de referencia: sirven para comparar zonas y tomar decisiones
+                (elegir un recorrido, exigir controles), no reemplazan un informe acústico profesional.
+              </p>
+            </div>
+          </details>
 
-        <section className="metodologia-seccion">
-          <h2>Cómo se actualizaron los datos</h2>
-          <p>
-            Los puntos se extrajeron de la versión pública del mapa interactivo del estudio con el
-            script <code>tools/scrape-mapa-acustico.mjs</code>, que descarga las teselas de datos y
-            decodifica los puntos de medición. Cada punto incluye su dirección y el circuito vial
-            al que pertenece.
-          </p>
-          <p>
-            <Link to="/medicion" className="metodologia-enlace">
-              Probar la medición con el micrófono →
-            </Link>
-          </p>
-        </section>
+          <details className="metodologia-acordeon">
+            <summary>Límites de medir con el celular</summary>
+            <div className="metodologia-acordeon-contenido">
+              <p>
+                La función de medición de la app usa el micrófono del teléfono, que <strong>no está
+                calibrado</strong>. Los valores obtenidos son aproximados y pueden variar según el
+                modelo, la posición y el viento. Al medir:
+              </p>
+              <ul>
+                <li>Buscá un ambiente sin viento y alejá el teléfono del cuerpo y de la ropa.</li>
+                <li>Evitá tapar el micrófono con la mano.</li>
+                <li>Mantené la medición al menos 15–30 segundos para obtener un promedio más estable.</li>
+                <li>Compará siempre con el mismo teléfono para que las diferencias sean coherentes.</li>
+              </ul>
+              <p>
+                Una forma de calibrar de manera relativa: en un ambiente que conozcas (por ejemplo una
+                biblioteca o un punto del mapa acústico oficial), anotá qué valor marca tu teléfono y
+                usá esa diferencia como referencia.
+              </p>
+            </div>
+          </details>
 
-        <section className="metodologia-seccion">
-          <h2>Fuentes y referencias</h2>
-          <ul className="metodologia-fuentes">
-            {ENLACES.map(enlace => (
-              <li key={enlace.url}>
-                <a href={enlace.url} target="_blank" rel="noopener noreferrer">
-                  <span className="metodologia-fuente-titulo">{enlace.titulo}</span>
-                  <span className="metodologia-fuente-detalle">{enlace.detalle}</span>
-                  <span className="metodologia-fuente-medio">{enlace.medio}</span>
-                </a>
-              </li>
-            ))}
-          </ul>
-        </section>
+          <details className="metodologia-acordeon">
+            <summary>Cómo se actualizaron los datos</summary>
+            <div className="metodologia-acordeon-contenido">
+              <p>
+                Los puntos se extrajeron de la versión pública del mapa interactivo del estudio con el
+                script <code>tools/scrape-mapa-acustico.mjs</code>, que descarga las teselas de datos y
+                decodifica los puntos de medición. Cada punto incluye su dirección y el circuito vial
+                al que pertenece.
+              </p>
+              <p>
+                <Link to="/medicion" className="metodologia-enlace">
+                  Probar la medición con el micrófono →
+                </Link>
+              </p>
+            </div>
+          </details>
+
+          <details className="metodologia-acordeon">
+            <summary>Fuentes y referencias</summary>
+            <div className="metodologia-acordeon-contenido">
+              <ul className="metodologia-fuentes">
+                {ENLACES.map(enlace => (
+                  <li key={enlace.url}>
+                    <a href={enlace.url} target="_blank" rel="noopener noreferrer">
+                      <span className="metodologia-fuente-titulo">{enlace.titulo}</span>
+                      <span className="metodologia-fuente-detalle">{enlace.detalle}</span>
+                      <span className="metodologia-fuente-medio">{enlace.medio}</span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </details>
+        </div>
 
         <footer className="metodologia-pie">
           <Link to="/noticias" className="metodologia-enlace">

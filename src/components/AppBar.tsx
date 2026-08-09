@@ -24,10 +24,6 @@ function AppBar({ titulo, subtitulo }: AppBarProps) {
         </div>
 
         <div className="appbar-derecha">
-          <span className="appbar-estado">
-            <span className="appbar-estado-dot" aria-hidden="true" />
-            Monitoreo activo
-          </span>
           <button
             className="appbar-accion"
             onClick={toggleModo}

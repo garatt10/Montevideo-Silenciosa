@@ -21,11 +21,22 @@ const ETIQUETAS: Record<NivelRuido, string> = {
   critico: 'Crítico',
 }
 
+const EXPLICACIONES: Record<NivelRuido, string> = {
+  bajo: 'Ambiente tranquilo, como una biblioteca.',
+  moderado: 'Conversación normal de fondo.',
+  alto: 'Ruido molesto, dificulta concentrarse.',
+  critico: 'Nivel elevado; la exposición prolongada es riesgosa.',
+}
+
 export function nivelRuido(dB: number): NivelRuido {
   if (dB < 55) return 'bajo'
   if (dB < 70) return 'moderado'
   if (dB < 80) return 'alto'
   return 'critico'
+}
+
+export function explicacionDB(dB: number): string {
+  return EXPLICACIONES[nivelRuido(dB)]
 }
 
 export function colorDB(dB: number): string {
@@ -41,10 +52,10 @@ export function etiquetaDB(dB: number): string {
 }
 
 const RAMPA_STOPS: [number, string][] = [
-  [45, '#10b981'],
-  [62, '#eab308'],
-  [76, '#f97316'],
-  [92, '#ef4444'],
+  [55, '#10b981'],
+  [70, '#eab308'],
+  [80, '#f97316'],
+  [95, '#ef4444'],
 ]
 
 function hexARgb(hex: string): [number, number, number] {

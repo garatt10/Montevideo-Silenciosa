@@ -1,13 +1,12 @@
 import {
   addDoc,
   collection,
-  doc,
   getDocs,
+  limit,
   onSnapshot,
   orderBy,
   query,
   serverTimestamp,
-  setDoc,
   type QueryDocumentSnapshot,
   type Timestamp,
 } from 'firebase/firestore'
@@ -43,6 +42,8 @@ export type ReporteGuardado = {
   userId?: string
 }
 
+export type TemaNoticia = 'montevideo' | 'investigacion' | 'prototipo'
+
 export type NoticiaGuardada = {
   id: number
   titulo: string
@@ -53,6 +54,7 @@ export type NoticiaGuardada = {
   url?: string
   medio?: string
   ejemplo?: boolean
+  tema: TemaNoticia
 }
 
 const COLECCIONES = {
@@ -62,12 +64,19 @@ const COLECCIONES = {
   noticias: 'noticias',
 } as const
 
+const LIMITE_LISTADOS = 500
+
 function convertirFecha(valor: unknown): string {
-  if (valor instanceof Date) return valor.toISOString()
-  if (valor && typeof valor === 'object' && 'toDate' in valor) {
-    return (valor as Timestamp).toDate().toISOString()
+  try {
+    if (valor instanceof Date) return valor.toISOString()
+    if (typeof valor === 'string') return new Date(valor).toISOString()
+    if (valor && typeof valor === 'object' && 'toDate' in valor) {
+      return (valor as Timestamp).toDate().toISOString()
+    }
+    return new Date(Number(valor ?? Date.now())).toISOString()
+  } catch {
+    return new Date().toISOString()
   }
-  return new Date(Number(valor ?? Date.now())).toISOString()
 }
 
 function medicionDesdeDoc(documento: QueryDocumentSnapshot): MedicionGuardada {
@@ -105,7 +114,11 @@ function reporteDesdeDoc(documento: QueryDocumentSnapshot): ReporteGuardado {
 }
 
 export async function obtenerMediciones(): Promise<MedicionGuardada[]> {
-  const coleccion = query(collection(db, COLECCIONES.mediciones), orderBy('fecha', 'desc'))
+  const coleccion = query(
+    collection(db, COLECCIONES.mediciones),
+    orderBy('fecha', 'desc'),
+    limit(LIMITE_LISTADOS),
+  )
   const snapshot = await getDocs(coleccion)
   return snapshot.docs.map(medicionDesdeDoc)
 }
@@ -119,24 +132,54 @@ export async function guardarMedicion(
   })
 }
 
-export function suscribirMediciones(alCambiar: (mediciones: MedicionGuardada[]) => void): () => void {
-  const coleccion = query(collection(db, COLECCIONES.mediciones), orderBy('fecha', 'desc'))
-  return onSnapshot(coleccion, (snapshot) => {
-    alCambiar(snapshot.docs.map(medicionDesdeDoc))
-  })
+export function suscribirMediciones(
+  alCambiar: (mediciones: MedicionGuardada[]) => void,
+  onError?: (error: Error) => void,
+): () => void {
+  const coleccion = query(
+    collection(db, COLECCIONES.mediciones),
+    orderBy('fecha', 'desc'),
+    limit(LIMITE_LISTADOS),
+  )
+  return onSnapshot(
+    coleccion,
+    (snapshot) => {
+      alCambiar(snapshot.docs.map(medicionDesdeDoc))
+    },
+    (error) => {
+      onError?.(error)
+    },
+  )
 }
 
 export async function obtenerReportes(): Promise<ReporteGuardado[]> {
-  const coleccion = query(collection(db, COLECCIONES.reportes), orderBy('fecha', 'desc'))
+  const coleccion = query(
+    collection(db, COLECCIONES.reportes),
+    orderBy('fecha', 'desc'),
+    limit(LIMITE_LISTADOS),
+  )
   const snapshot = await getDocs(coleccion)
   return snapshot.docs.map(reporteDesdeDoc)
 }
 
-export function suscribirReportes(alCambiar: (reportes: ReporteGuardado[]) => void): () => void {
-  const coleccion = query(collection(db, COLECCIONES.reportes), orderBy('fecha', 'desc'))
-  return onSnapshot(coleccion, (snapshot) => {
-    alCambiar(snapshot.docs.map(reporteDesdeDoc))
-  })
+export function suscribirReportes(
+  alCambiar: (reportes: ReporteGuardado[]) => void,
+  onError?: (error: Error) => void,
+): () => void {
+  const coleccion = query(
+    collection(db, COLECCIONES.reportes),
+    orderBy('fecha', 'desc'),
+    limit(LIMITE_LISTADOS),
+  )
+  return onSnapshot(
+    coleccion,
+    (snapshot) => {
+      alCambiar(snapshot.docs.map(reporteDesdeDoc))
+    },
+    (error) => {
+      onError?.(error)
+    },
+  )
 }
 
 export async function guardarReporte(
@@ -162,16 +205,7 @@ export async function obtenerNoticias(): Promise<NoticiaGuardada[]> {
       url: datos.url ?? undefined,
       medio: datos.medio ?? undefined,
       ejemplo: Boolean(datos.ejemplo),
+      tema: (datos.tema as TemaNoticia) ?? 'montevideo',
     }
   })
-}
-
-export async function sembrarNoticiasSiVacio(noticias: NoticiaGuardada[]): Promise<void> {
-  const snapshot = await getDocs(collection(db, COLECCIONES.noticias))
-  if (!snapshot.empty) return
-  await Promise.all(
-    noticias.map((noticia) =>
-      setDoc(doc(db, COLECCIONES.noticias, String(noticia.id)), noticia),
-    ),
-  )
 }

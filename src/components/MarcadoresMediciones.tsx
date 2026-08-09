@@ -13,14 +13,9 @@ type MarcadoresMedicionesProps = {
   puntos: PuntoRuido[]
 }
 
-const MAX_MARCADORES = 150
-
 function MarcadoresMediciones({ puntos }: MarcadoresMedicionesProps) {
   const { usuario } = useAuth()
-  const mediciones = (puntos.filter((punto) => punto.id.startsWith('medicion-')) as PuntoMedicion[]).slice(
-    0,
-    MAX_MARCADORES,
-  )
+  const mediciones = puntos.filter((punto) => punto.id.startsWith('medicion-')) as PuntoMedicion[]
 
   if (mediciones.length === 0) return null
 
@@ -61,7 +56,11 @@ function MarcadoresMediciones({ puntos }: MarcadoresMedicionesProps) {
                 <div className="marcador-popup-zona">{medicion.nombre}</div>
                 {medicion.nota && <div className="marcador-popup-nota">{medicion.nota}</div>}
                 <div className="marcador-popup-fecha">{fechaTexto}</div>
-                {propia && <div className="marcador-popup-propia">Tu medición</div>}
+                {propia ? (
+                  <div className="marcador-popup-propia">Tu medición</div>
+                ) : (
+                  <div className="marcador-popup-comunitaria">Medición comunitaria</div>
+                )}
               </div>
             </Popup>
           </CircleMarker>

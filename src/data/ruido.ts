@@ -42,9 +42,10 @@ export function estimarRuidoEnUbicacion(
   referencia: string
   distanciaReferenciaKm: number
   esReferenciaCercana: boolean
-} {
-  const fuente = puntos.length > 0 ? puntos : puntosRuido
-  const cercanos = fuente
+} | null {
+  if (puntos.length === 0) return null
+
+  const cercanos = puntos
     .map((punto) => ({
       punto,
       distancia: distanciaKm(coordenadas, punto.coordenadas),

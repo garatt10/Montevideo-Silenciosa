@@ -1,0 +1,71 @@
+/* ── Bottom navigation flotante (iOS) ─────────────────────── */
+.nav {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: var(--nav-bottom);
+  z-index: 1500;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 4px;
+  width: calc(100% - 24px);
+  max-width: 560px;
+  height: var(--nav-height);
+  padding: 6px 8px;
+  background: var(--glass-bg-fuerte);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-nav);
+  box-shadow: var(--shadow-2);
+  backdrop-filter: blur(18px) saturate(1.2);
+  -webkit-backdrop-filter: blur(18px) saturate(1.2);
+}
+
+.nav-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  flex: 1;
+  height: 100%;
+  border: none;
+  background: transparent;
+  color: var(--text-2);
+  text-decoration: none;
+  border-radius: 18px;
+  transition: color 0.2s ease, background 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.nav-item:hover {
+  color: var(--text);
+  background: var(--primary-soft);
+}
+
+.nav-item--activo {
+  color: var(--primary);
+}
+
+.nav-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.nav-item--activo .nav-label {
+  font-weight: 700;
+}
+
+.nav-indicador {
+  position: absolute;
+  top: 4px;
+  left: 50%;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--primary);
+  box-shadow: 0 0 10px var(--primary);
+}
+

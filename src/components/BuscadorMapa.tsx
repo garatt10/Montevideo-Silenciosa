@@ -1,16 +1,15 @@
 import { useMemo, useState } from 'react'
-import { Search, SlidersHorizontal, X } from 'lucide-react'
+import { ChevronRight, Search, X } from 'lucide-react'
 import { useMap, useMapEvents } from 'react-leaflet'
 import lugares from '../data/lugares'
 import { ZONAS_COORDS } from '../data/contextoRuido'
 
 type BuscadorMapaProps = {
   onSeleccion: (posicion: [number, number], nombre?: string) => void
-  filtrosAbiertos?: boolean
-  onFiltrosClick?: () => void
 }
 
-const CLASES_INTERFAZ = '.buscador-mapa, .mapa-controles, .leyenda, .ubicacion-widget'
+const CLASES_INTERFAZ =
+  '.buscador-mapa, .mapa-controls-flotantes, .mapa-triggers, .mapa-controles, .leyenda, .ubicacion-widget, .panel-resumen, .detalle-zona, .leaflet-interactive, .leaflet-popup'
 
 function CapturarToqueMapa({ onSeleccion }: BuscadorMapaProps) {
   useMapEvents({
@@ -23,7 +22,7 @@ function CapturarToqueMapa({ onSeleccion }: BuscadorMapaProps) {
   return null
 }
 
-function BuscadorMapa({ onSeleccion, filtrosAbiertos, onFiltrosClick }: BuscadorMapaProps) {
+function BuscadorMapa({ onSeleccion }: BuscadorMapaProps) {
   const map = useMap()
   const [consulta, setConsulta] = useState('')
   const resultados = useMemo(() => {
@@ -46,10 +45,6 @@ function BuscadorMapa({ onSeleccion, filtrosAbiertos, onFiltrosClick }: Buscador
     onSeleccion(resultado.coordenadas, resultado.nombre)
   }
 
-  function abrirFiltros() {
-    onFiltrosClick?.()
-  }
-
   return (
     <>
       <div className="buscador-mapa" onPointerDown={event => event.stopPropagation()}>
@@ -61,25 +56,24 @@ function BuscadorMapa({ onSeleccion, filtrosAbiertos, onFiltrosClick }: Buscador
           aria-label="Buscar barrio o lugar"
         />
         {consulta && (
-          <button type="button" onClick={() => setConsulta('')} aria-label="Limpiar búsqueda">
+          <button
+            type="button"
+            className="buscador-limpiar"
+            onClick={() => setConsulta('')}
+            aria-label="Limpiar búsqueda"
+          >
             <X size={16} />
           </button>
         )}
-        <button
-          type="button"
-          className={`buscador-filtros ${filtrosAbiertos ? 'buscador-filtros--activo' : ''}`}
-          onClick={abrirFiltros}
-          aria-label="Filtros del mapa"
-          aria-pressed={filtrosAbiertos}
-        >
-          <SlidersHorizontal size={18} />
-        </button>
         {resultados.length > 0 && (
           <div className="buscador-resultados">
             {resultados.map(resultado => (
               <button key={`${resultado.tipo}-${resultado.nombre}`} type="button" onClick={() => elegir(resultado)}>
-                <span>{resultado.nombre}</span>
-                <small>{resultado.tipo}</small>
+                <span className="buscador-resultado-nombre">
+                  {resultado.nombre}
+                  <small>{resultado.tipo}</small>
+                </span>
+                <ChevronRight size={16} className="buscador-resultado-chevron" aria-hidden="true" />
               </button>
             ))}
           </div>

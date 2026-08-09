@@ -1,0 +1,62 @@
+/* ── Medidor circular ─────────────────────────────────────── */
+.medidor-db {
+  position: relative;
+}
+
+.medidor-db svg {
+  display: block;
+}
+
+.medidor-db-track {
+  fill: none;
+  stroke: var(--surface-2);
+  stroke-width: 12;
+}
+
+.medidor-db-aro {
+  fill: none;
+  stroke-width: 12;
+  stroke-linecap: round;
+  transform: rotate(-90deg);
+  transform-origin: center;
+  transition: stroke-dashoffset 0.5s ease;
+}
+
+.medidor-db-valor {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+}
+
+.medidor-db-num {
+  font-size: 62px;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+  text-shadow: 0 0 24px var(--primary-soft);
+}
+
+.medidor-db--midiendo .medidor-db-num {
+  animation: pulso-num 1.6s ease-in-out infinite;
+}
+
+.medidor-db-unit {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-3);
+  margin-top: 2px;
+}
+
+.medidor-db-etiqueta {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-top: 8px;
+}
+

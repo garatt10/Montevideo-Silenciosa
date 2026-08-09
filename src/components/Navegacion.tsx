@@ -4,7 +4,7 @@ import { MapPin, Mic, FilePlus, Newspaper, User } from 'lucide-react'
 
 const TABS = [
   { path: '/', icon: MapPin, label: 'Mapa' },
-  { path: '/medicion', icon: Mic, label: 'Medición' },
+  { path: '/medicion', icon: Mic, label: 'Medir' },
   { path: '/reportar', icon: FilePlus, label: 'Reportar' },
   { path: '/noticias', icon: Newspaper, label: 'Noticias' },
   { path: '/perfil', icon: User, label: 'Perfil' },

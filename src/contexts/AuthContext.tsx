@@ -29,7 +29,7 @@ type AuthContextType = {
   cargando: boolean
   login: (email: string, password: string) => Promise<void>
   loginGoogle: () => Promise<void>
-  registrar: (email: string, password: string, cedula: string, nombre: string, apellido: string) => Promise<void>
+  registrar: (email: string, password: string) => Promise<void>
   completarPerfil: (nombre: string, apellido: string, cedula: string) => Promise<void>
   logout: () => Promise<void>
 }
@@ -73,6 +73,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         return
       }
       const perfil = await cargarPerfil(firebaseUser)
+      if (auth.currentUser?.uid !== firebaseUser.uid) return
       setUsuario(perfil.usuario)
       setPerfilCompleto(perfil.completo)
       setCargando(false)
@@ -87,25 +88,31 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   async function loginGoogle() {
     const resultado = await signInWithPopup(auth, new GoogleAuthProvider())
     const perfil = await cargarPerfil(resultado.user)
+    if (auth.currentUser?.uid !== resultado.user.uid) return
     setUsuario(perfil.usuario)
     setPerfilCompleto(perfil.completo)
   }
 
-  async function registrar(email: string, password: string, cedula: string, nombre: string, apellido: string) {
+  async function registrar(email: string, password: string) {
     const credenciales = await createUserWithEmailAndPassword(auth, email, password)
-    await setDoc(doc(db, 'perfiles', credenciales.user.uid), {
-      cedula,
-      nombre,
-      apellido,
-    })
+    try {
+      await setDoc(doc(db, 'perfiles', credenciales.user.uid), {
+        cedula: '',
+        nombre: '',
+        apellido: '',
+      })
+    } catch {
+      // La cuenta ya quedó creada en Auth. Si el perfil no se pudo escribir
+      // (p. ej. caída de red), se inicializará al completar el perfil.
+    }
     setUsuario({
       id: credenciales.user.uid,
       email: credenciales.user.email ?? email,
-      cedula,
-      nombre,
-      apellido,
+      cedula: '',
+      nombre: '',
+      apellido: '',
     })
-    setPerfilCompleto(true)
+    setPerfilCompleto(false)
   }
 
   async function completarPerfil(nombre: string, apellido: string, cedula: string) {

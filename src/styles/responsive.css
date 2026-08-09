@@ -1,0 +1,248 @@
+/* ── Responsive ───────────────────────────────────────────── */
+@media (max-width: 767px) {
+  .appbar-subtitulo {
+    display: none;
+  }
+
+  .appbar-accion {
+    width: 38px;
+    height: 38px;
+  }
+
+  .paso-info small {
+    display: none;
+  }
+
+  .paso-info strong {
+    font-size: 11px;
+  }
+
+  .paso-indice {
+    width: 26px;
+    height: 26px;
+    font-size: 12px;
+  }
+
+  .paso + .paso::before {
+    top: 13px;
+  }
+
+  .paso {
+    gap: 6px;
+  }
+
+  .buscador-mapa {
+    width: min(400px, calc(100% - 140px));
+  }
+
+  .mapa-filtros-trigger {
+    width: 44px;
+    padding: 0;
+    justify-content: center;
+  }
+
+  .mapa-filtros-trigger span {
+    display: none;
+  }
+
+  /* Filtros como bottom sheet */
+  .mapa-controles {
+    top: auto;
+    right: 10px;
+    bottom: calc(var(--nav-height) + var(--nav-bottom) + 10px);
+    left: 10px;
+    z-index: 1300;
+  }
+
+  .mapa-panel {
+    width: 100%;
+    max-width: none;
+    max-height: 62dvh;
+    border-radius: var(--radius-sheet) var(--radius-sheet) var(--radius-lg) var(--radius-lg);
+  }
+
+  .panel-resumen--abierto {
+    width: calc(100% - 20px);
+  }
+
+  .reportar-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .panel-resumen-pill-zona {
+    display: none;
+  }
+
+  /* El panel de ubicación se abre por encima del botón para no
+     tapar la pill de resumen contextual (que queda centrada abajo) */
+  .ubicacion-widget {
+    flex-direction: column-reverse;
+  }
+
+  .ubicacion-panel {
+    margin-bottom: 14px;
+  }
+
+  /* La leyenda se centra sobre el mapa para no cortarse en pantallas angostas */
+  .leyenda-panel {
+    position: fixed;
+    top: calc(var(--appbar-top) + var(--appbar-height) + 74px + env(safe-area-inset-top, 0px));
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: min(272px, calc(100vw - 40px));
+    max-height: calc(100dvh - 230px);
+  }
+
+  /* Desahogo de espaciado en Medición */
+  .medicion-body {
+    gap: 22px;
+    padding-top: calc(var(--appbar-top) + var(--appbar-height) + 60px + env(safe-area-inset-top, 0px));
+  }
+
+  /* Desahogo de espaciado en Noticias */
+  .noticias-head {
+    padding: 20px;
+  }
+
+  .noticias-filtros {
+    gap: 10px;
+  }
+
+  .noticias-head + .noticias-filtros,
+  .noticias-filtros + .noticias-lista {
+    margin-top: 14px;
+  }
+
+  .noticia-card {
+    padding: 18px;
+  }
+
+  /* Desahogo de espaciado en Metodología */
+  .metodologia-scroll {
+    gap: 20px;
+  }
+
+  .metodologia-seccion {
+    padding: 20px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .buscador-mapa {
+    width: min(480px, calc(100% - 140px));
+  }
+}
+
+@media (min-width: 1024px) {
+  .appbar {
+    left: 20px;
+    right: 20px;
+  }
+
+  .page {
+    padding-top: calc(var(--appbar-top) + 72px + env(safe-area-inset-top, 0px));
+  }
+
+  .buscador-mapa {
+    top: 20px;
+    left: 20px;
+  }
+
+  .mapa-controls-flotantes {
+    top: 78px;
+    left: 20px;
+  }
+
+  .mapa-triggers {
+    top: 20px;
+    right: 20px;
+  }
+
+  .mapa-controles {
+    top: 78px;
+    right: 20px;
+  }
+
+  .leyenda {
+    top: 20px;
+    right: 72px;
+  }
+
+  .panel-resumen {
+    left: 20px;
+    bottom: 24px;
+    transform: none;
+  }
+
+  .panel-resumen--abierto {
+    left: 20px;
+    transform: none;
+  }
+
+  .detalle-zona {
+    left: 20px;
+    bottom: 24px;
+    transform: none;
+  }
+
+  .ubicacion-widget {
+    right: 20px;
+    bottom: 24px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .home {
+    grid-template-columns: 340px 1fr;
+  }
+}
+
+/* Teléfonos compactos (375 px) */
+@media (max-width: 389px) {
+  .medicion-body,
+  .reportar-body {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .medicion-duracion-chip {
+    flex: 1;
+    justify-content: center;
+  }
+
+  .medicion-resultado-etiqueta {
+    font-size: 34px;
+  }
+
+  .reportar-paso-head p {
+    font-size: 13px;
+  }
+}
+
+/* Escritorio amplio (1280 px) */
+@media (min-width: 1280px) {
+  .home {
+    grid-template-columns: 340px 1fr;
+  }
+
+  .page {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+/* Ultra-wide (1920 px): centrar y acotar el contenido */
+@media (min-width: 1920px) {
+  .home {
+    max-width: 1780px;
+    margin: 0 auto;
+  }
+
+  .page {
+    max-width: 1480px;
+    margin: 0 auto;
+    width: 100%;
+  }
+}
+

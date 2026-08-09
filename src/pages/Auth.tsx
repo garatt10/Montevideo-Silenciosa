@@ -1,5 +1,5 @@
 import { FormEvent, useState } from 'react'
-import { CheckCircle2, IdCard, Lock, LogIn, Mail, UserPlus } from 'lucide-react'
+import { CheckCircle2, LogIn, Mail, Lock, UserPlus } from 'lucide-react'
 import { useAuth } from '../contexts/AuthContext'
 
 type ModoAuth = 'registro' | 'login'
@@ -27,9 +27,6 @@ function mensajeDeError(error: unknown): string {
 function Auth({ onSuccess }: AuthProps) {
   const { login, loginGoogle, registrar } = useAuth()
   const [modo, setModo] = useState<ModoAuth>('registro')
-  const [cedula, setCedula] = useState('')
-  const [nombre, setNombre] = useState('')
-  const [apellido, setApellido] = useState('')
   const [correo, setCorreo] = useState('')
   const [password, setPassword] = useState('')
   const [mensaje, setMensaje] = useState('')
@@ -37,9 +34,7 @@ function Auth({ onSuccess }: AuthProps) {
   const [enviando, setEnviando] = useState(false)
 
   const esRegistro = modo === 'registro'
-  const formularioCompleto = esRegistro
-    ? cedula.trim() && nombre.trim() && apellido.trim() && correo.trim() && password.trim()
-    : correo.trim() && password.trim()
+  const formularioCompleto = correo.trim() && password.trim()
 
   function cambiarModo(nuevoModo: ModoAuth) {
     setModo(nuevoModo)
@@ -49,7 +44,7 @@ function Auth({ onSuccess }: AuthProps) {
 
   function finalizarExitoso(completar: () => void) {
     setExito(true)
-    setMensaje('Listo.')
+    setMensaje(esRegistro ? 'Cuenta creada. Ahora completá tu perfil.' : 'Listo.')
     setTimeout(() => {
       setEnviando(false)
       onSuccess?.()
@@ -65,13 +60,7 @@ function Auth({ onSuccess }: AuthProps) {
 
     try {
       if (esRegistro) {
-        await registrar(
-          correo.trim().toLowerCase(),
-          password,
-          cedula.trim(),
-          nombre.trim(),
-          apellido.trim(),
-        )
+        await registrar(correo.trim().toLowerCase(), password)
         finalizarExitoso(() => {})
       } else {
         await login(correo.trim().toLowerCase(), password)
@@ -100,114 +89,6 @@ function Auth({ onSuccess }: AuthProps) {
 
   return (
     <div className="auth-panel">
-      <div className="auth-tabs" aria-label="Seleccionar acción">
-        <button
-          type="button"
-          className={`auth-tab ${esRegistro ? 'auth-tab--activo' : ''}`}
-          onClick={() => cambiarModo('registro')}
-        >
-          <UserPlus size={17} />
-          Registro
-        </button>
-        <button
-          type="button"
-          className={`auth-tab ${!esRegistro ? 'auth-tab--activo' : ''}`}
-          onClick={() => cambiarModo('login')}
-        >
-          <LogIn size={17} />
-          Login
-        </button>
-      </div>
-
-      <form className="auth-form" onSubmit={enviar}>
-        <label className="auth-field">
-          <span>Correo</span>
-          <div className="auth-input-wrap">
-            <Mail size={18} />
-            <input
-              type="email"
-              value={correo}
-              onChange={event => setCorreo(event.target.value)}
-              placeholder="tu@email.com"
-              autoComplete="email"
-            />
-          </div>
-        </label>
-
-        {esRegistro && (
-          <>
-            <label className="auth-field">
-              <span>Cédula</span>
-              <div className="auth-input-wrap">
-                <IdCard size={18} />
-                <input
-                  value={cedula}
-                  onChange={event => setCedula(event.target.value)}
-                  placeholder="Ej: 12345678"
-                  inputMode="numeric"
-                  autoComplete="off"
-                />
-              </div>
-            </label>
-
-            <label className="auth-field">
-              <span>Nombre</span>
-              <div className="auth-input-wrap">
-                <UserPlus size={18} />
-                <input
-                  value={nombre}
-                  onChange={event => setNombre(event.target.value)}
-                  placeholder="Ej: Ana"
-                  autoComplete="given-name"
-                />
-              </div>
-            </label>
-
-            <label className="auth-field">
-              <span>Apellido</span>
-              <div className="auth-input-wrap">
-                <UserPlus size={18} />
-                <input
-                  value={apellido}
-                  onChange={event => setApellido(event.target.value)}
-                  placeholder="Ej: Rodriguez"
-                  autoComplete="family-name"
-                />
-              </div>
-            </label>
-          </>
-        )}
-
-        <label className="auth-field">
-          <span>Contraseña</span>
-          <div className="auth-input-wrap">
-            <Lock size={18} />
-            <input
-              type="password"
-              value={password}
-              onChange={event => setPassword(event.target.value)}
-              placeholder="Mínimo 6 caracteres"
-              minLength={6}
-              autoComplete={esRegistro ? 'new-password' : 'current-password'}
-            />
-          </div>
-        </label>
-
-        {mensaje && (
-          <p className={`auth-mensaje ${exito ? 'auth-mensaje--exito' : ''}`}>
-            {exito && <CheckCircle2 size={16} />}
-            {mensaje}
-          </p>
-        )}
-
-        <button className="btn-primario auth-submit" disabled={!formularioCompleto || enviando}>
-          {esRegistro ? <UserPlus size={19} /> : <LogIn size={19} />}
-          {esRegistro ? 'Crear cuenta' : 'Ingresar'}
-        </button>
-      </form>
-
-      <div className="auth-divisor">o</div>
-
       <button
         type="button"
         className="auth-google"
@@ -234,6 +115,88 @@ function Auth({ onSuccess }: AuthProps) {
         </svg>
         Continuar con Google
       </button>
+
+      <div className="auth-divisor">o</div>
+
+      <div className="auth-tabs" role="tablist" aria-label="Seleccionar acción">
+        <button
+          type="button"
+          id="auth-tab-registro"
+          role="tab"
+          aria-selected={esRegistro}
+          aria-controls="auth-panel"
+          className={`auth-tab ${esRegistro ? 'auth-tab--activo' : ''}`}
+          onClick={() => cambiarModo('registro')}
+        >
+          <UserPlus size={17} />
+          Registro
+        </button>
+        <button
+          type="button"
+          id="auth-tab-login"
+          role="tab"
+          aria-selected={!esRegistro}
+          aria-controls="auth-panel"
+          className={`auth-tab ${!esRegistro ? 'auth-tab--activo' : ''}`}
+          onClick={() => cambiarModo('login')}
+        >
+          <LogIn size={17} />
+          Login
+        </button>
+      </div>
+
+      <form className="auth-form" onSubmit={enviar} id="auth-panel" role="tabpanel" aria-labelledby={esRegistro ? 'auth-tab-registro' : 'auth-tab-login'}>
+        <label className="auth-field">
+          <span>Correo</span>
+          <div className="auth-input-wrap">
+            <Mail size={18} />
+            <input
+              type="email"
+              value={correo}
+              onChange={event => setCorreo(event.target.value)}
+              placeholder="tu@email.com"
+              autoComplete="email"
+            />
+          </div>
+        </label>
+
+        <label className="auth-field">
+          <span>Contraseña</span>
+          <div className="auth-input-wrap">
+            <Lock size={18} />
+            <input
+              type="password"
+              value={password}
+              onChange={event => setPassword(event.target.value)}
+              placeholder="Mínimo 6 caracteres"
+              minLength={6}
+              autoComplete={esRegistro ? 'new-password' : 'current-password'}
+            />
+          </div>
+        </label>
+
+        {esRegistro && (
+          <p className="auth-aviso">
+            Después de crear la cuenta te pediremos completar tu perfil (nombre y cédula) para
+            habilitar mediciones y reportes.
+          </p>
+        )}
+
+        {mensaje && (
+          <p
+            className={`auth-mensaje ${exito ? 'auth-mensaje--exito' : ''}`}
+            role={exito ? 'status' : 'alert'}
+          >
+            {exito && <CheckCircle2 size={16} />}
+            {mensaje}
+          </p>
+        )}
+
+        <button className="btn-primario auth-submit" disabled={!formularioCompleto || enviando}>
+          {esRegistro ? <UserPlus size={19} /> : <LogIn size={19} />}
+          {esRegistro ? 'Crear cuenta' : 'Ingresar'}
+        </button>
+      </form>
     </div>
   )
 }

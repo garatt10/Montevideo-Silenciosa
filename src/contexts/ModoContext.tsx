@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, type ReactNode } from 'react'
+import { createContext, useContext, useEffect, useState, type ReactNode } from 'react'
 import { STORAGE_KEYS } from '../data/storage'
 
 type Modo = 'oscuro' | 'claro'
@@ -17,6 +17,13 @@ function leerModoGuardado(): Modo {
 
 export function ModoProvider({ children }: { children: ReactNode }) {
   const [modo, setModo] = useState<Modo>(leerModoGuardado)
+
+  useEffect(() => {
+    const meta = document.querySelector('meta[name="theme-color"]')
+    if (meta) {
+      meta.setAttribute('content', modo === 'oscuro' ? '#090B12' : '#F3F5FA')
+    }
+  }, [modo])
 
   function toggleModo() {
     setModo(m => {

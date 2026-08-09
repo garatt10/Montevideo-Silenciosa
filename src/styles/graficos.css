@@ -1,0 +1,98 @@
+/* ── Gráficos ─────────────────────────────────────────────── */
+.grafico-evolucion {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px;
+  border-radius: var(--radius-card);
+  background: var(--surface);
+  border: 1px solid var(--border);
+}
+
+.grafico-evolucion-svg {
+  width: 100%;
+  height: auto;
+}
+
+.grafico-evolucion-grid {
+  stroke: var(--border);
+  stroke-width: 1;
+  stroke-dasharray: 3 4;
+}
+
+.grafico-evolucion-referencia {
+  stroke: var(--text-3);
+  stroke-width: 1;
+  stroke-dasharray: 5 4;
+}
+
+.grafico-evolucion-ref-label {
+  fill: var(--text-3);
+  font-size: 8.5px;
+  font-weight: 600;
+}
+
+.grafico-evolucion-linea {
+  stroke-width: 2.5;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+.grafico-evolucion-punto {
+  stroke: var(--surface);
+  stroke-width: 1.5;
+}
+
+.grafico-evolucion-ejes {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: var(--text-3);
+}
+
+.distribucion-fuentes {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 16px;
+  border-radius: var(--radius-card);
+  background: var(--surface);
+  border: 1px solid var(--border);
+}
+
+.distribucion-fuentes-fila {
+  display: grid;
+  grid-template-columns: 110px 1fr 30px;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+}
+
+.distribucion-fuentes-nombre {
+  color: var(--text-2);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.distribucion-fuentes-barra {
+  height: 7px;
+  border-radius: 999px;
+  background: var(--surface-2);
+  overflow: hidden;
+}
+
+.distribucion-fuentes-barra-inner {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--primary), var(--info));
+}
+
+.distribucion-fuentes-count {
+  font-weight: 700;
+  color: var(--text);
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+

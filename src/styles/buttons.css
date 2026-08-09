@@ -1,0 +1,54 @@
+/* ── Botones ──────────────────────────────────────────────── */
+.btn-primario,
+.btn-secundario {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 22px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: var(--radius-btn);
+  border: none;
+  transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease,
+    border-color 0.2s ease, opacity 0.2s ease;
+}
+
+.btn-primario {
+  color: #fff;
+  background: var(--primary);
+  box-shadow: 0 8px 20px rgba(59, 99, 224, 0.32);
+}
+
+.btn-primario:hover {
+  background: var(--primary-hover);
+  box-shadow: 0 10px 24px rgba(59, 99, 224, 0.4);
+}
+
+.btn-primario:active {
+  background: var(--primary-active);
+  transform: scale(0.98);
+}
+
+.btn-primario:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+
+.btn-secundario {
+  color: var(--text);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+}
+
+.btn-secundario:hover {
+  background: var(--surface-3);
+  border-color: var(--border-strong);
+}
+
+.btn-secundario:active {
+  transform: scale(0.98);
+}
+

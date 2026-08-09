@@ -13,7 +13,7 @@ function colorRgba(hex: string, opacidad: number): string {
 }
 
 function intensidadPorDecibeles(db: number): number {
-  return Math.max(0.2, Math.min(0.78, (db - 45) / 55))
+  return Math.max(0.2, Math.min(0.78, (db - 55) / 40))
 }
 
 type MapaCalorRuidoProps = {
@@ -82,11 +82,11 @@ function MapaCalorRuido({ puntos }: MapaCalorRuidoProps) {
     }
 
     redibujar()
-    map.on('movestart move moveend zoomstart zoom zoomend resize', pedirRedibujo)
+    map.on('moveend zoomend resize', pedirRedibujo)
 
     return () => {
       if (frameId !== null) window.cancelAnimationFrame(frameId)
-      map.off('movestart move moveend zoomstart zoom zoomend resize', pedirRedibujo)
+      map.off('moveend zoomend resize', pedirRedibujo)
       canvas.remove()
     }
   }, [map, puntos])

@@ -8,10 +8,10 @@ import { estimarRuidoEnUbicacion, puntosRuido } from '../data/ruido'
 import { obtenerReportes, suscribirReportes, type ReporteGuardado } from '../lib/api'
 
 const NIVELES = [
-  { color: COLORES_DB.bajo, label: 'Silencioso', rango: '< 55 dB' },
+  { color: COLORES_DB.bajo, label: 'Bajo', rango: '< 55 dB' },
   { color: COLORES_DB.moderado, label: 'Moderado', rango: '55–69 dB' },
   { color: COLORES_DB.alto, label: 'Alto', rango: '70–79 dB' },
-  { color: COLORES_DB.critico, label: 'Muy alto', rango: '≥ 80 dB' },
+  { color: COLORES_DB.critico, label: 'Crítico', rango: '≥ 80 dB' },
 ]
 
 const INTENSIDADES: Record<string, { label: string; color: string }> = {
@@ -29,9 +29,23 @@ function formatearHora(fecha: string): string {
   return fechaLocal.toLocaleDateString('es-UY', { day: '2-digit', month: 'short' })
 }
 
+const ESTIMACION_POR_DEFECTO: {
+  decibeles: number
+  confianza: 'alta' | 'media' | 'baja'
+  referencia: string
+  distanciaReferenciaKm: number
+  esReferenciaCercana: boolean
+} = {
+  decibeles: 0,
+  confianza: 'baja',
+  referencia: '',
+  distanciaReferenciaKm: 0,
+  esReferenciaCercana: false,
+}
+
 function Sidebar() {
   const estimacion = useMemo(
-    () => estimarRuidoEnUbicacion(CENTRO_MONTEVIDEO, puntosRuido),
+    () => estimarRuidoEnUbicacion(CENTRO_MONTEVIDEO, puntosRuido) ?? ESTIMACION_POR_DEFECTO,
     [],
   )
   const [reportes, setReportes] = useState<ReporteGuardado[]>([])
@@ -57,7 +71,7 @@ function Sidebar() {
       <section className="sidebar-card">
         <h2 className="sidebar-card-titulo">Nivel de ruido · Montevideo</h2>
         <div className="sidebar-medidor">
-          <MedidorDb decibeles={estimacion.decibeles} size={188} />
+          <MedidorDb decibeles={estimacion.decibeles} size={150} />
         </div>
       </section>
 

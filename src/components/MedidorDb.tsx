@@ -3,6 +3,7 @@ import { colorDB, etiquetaDB } from '../data/coloresRuido'
 type MedidorDbProps = {
   decibeles: number
   size?: number
+  midiendo?: boolean
 }
 
 const MIN_DB = 35
@@ -10,12 +11,12 @@ const MAX_DB = 100
 const RADIO = 80
 const CIRCUNFERENCIA = 2 * Math.PI * RADIO
 
-function MedidorDb({ decibeles, size = 210 }: MedidorDbProps) {
+function MedidorDb({ decibeles, size = 210, midiendo = false }: MedidorDbProps) {
   const progreso = Math.max(0, Math.min(1, (decibeles - MIN_DB) / (MAX_DB - MIN_DB)))
   const color = colorDB(decibeles)
 
   return (
-    <div className="medidor-db" style={{ width: size, height: size }}>
+    <div className={`medidor-db${midiendo ? ' medidor-db--midiendo' : ''}`} style={{ width: size, height: size }}>
       <svg viewBox="0 0 200 200" width={size} height={size} role="img" aria-label={`${decibeles} decibeles`}>
         <circle className="medidor-db-track" cx="100" cy="100" r={RADIO} />
         <circle

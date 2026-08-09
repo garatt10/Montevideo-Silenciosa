@@ -34,8 +34,13 @@ function Layout() {
 
   return (
     <div className="layout">
+      <a className="saltar-al-contenido" href="#contenido">
+        Saltar al contenido
+      </a>
       <AppBar titulo={meta.titulo} subtitulo={meta.subtitulo} />
       <motion.main
+        id="contenido"
+        tabIndex={-1}
         key={pathname}
         initial={{ opacity: 0, y: 8 }}
         animate={{ opacity: 1, y: 0 }}
