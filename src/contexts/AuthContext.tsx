@@ -9,6 +9,7 @@ import {
 } from 'firebase/auth'
 import { doc, getDoc, setDoc } from 'firebase/firestore'
 import { auth, db } from '../lib/firebase'
+import { esCedulaUruguayaValida, normalizarCedula } from '../lib/cedula'
 
 export type Usuario = {
   id: string
@@ -29,7 +30,7 @@ type AuthContextType = {
   cargando: boolean
   login: (email: string, password: string) => Promise<void>
   loginGoogle: () => Promise<void>
-  registrar: (email: string, password: string) => Promise<void>
+  registrar: (email: string, password: string, nombre: string, apellido: string, cedula: string) => Promise<void>
   completarPerfil: (nombre: string, apellido: string, cedula: string) => Promise<void>
   logout: () => Promise<void>
 }
@@ -48,7 +49,7 @@ async function cargarPerfil(firebaseUser: { uid: string; email: string | null; d
       cedula = typeof datos.cedula === 'string' ? datos.cedula : ''
       nombre = typeof datos.nombre === 'string' ? datos.nombre : nombre
       apellido = typeof datos.apellido === 'string' ? datos.apellido : ''
-      completo = Boolean(cedula && nombre)
+      completo = Boolean(esCedulaUruguayaValida(cedula) && nombre && apellido)
     }
   } catch {
     // Sin perfil o error de red: se mantienen los valores por defecto.
@@ -93,13 +94,17 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     setPerfilCompleto(perfil.completo)
   }
 
-  async function registrar(email: string, password: string) {
+  async function registrar(email: string, password: string, nombre: string, apellido: string, cedula: string) {
+    const cedulaNormalizada = normalizarCedula(cedula)
+    if (!esCedulaUruguayaValida(cedulaNormalizada)) {
+      throw new Error('CEDULA_INVALIDA')
+    }
     const credenciales = await createUserWithEmailAndPassword(auth, email, password)
     try {
       await setDoc(doc(db, 'perfiles', credenciales.user.uid), {
-        cedula: '',
-        nombre: '',
-        apellido: '',
+        cedula: cedulaNormalizada,
+        nombre,
+        apellido,
       })
     } catch {
       // La cuenta ya quedó creada en Auth. Si el perfil no se pudo escribir
@@ -108,21 +113,25 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     setUsuario({
       id: credenciales.user.uid,
       email: credenciales.user.email ?? email,
-      cedula: '',
-      nombre: '',
-      apellido: '',
+      cedula: cedulaNormalizada,
+      nombre,
+      apellido,
     })
-    setPerfilCompleto(false)
+    setPerfilCompleto(true)
   }
 
   async function completarPerfil(nombre: string, apellido: string, cedula: string) {
     if (!usuario) return
+    const cedulaNormalizada = normalizarCedula(cedula)
+    if (!esCedulaUruguayaValida(cedulaNormalizada)) {
+      throw new Error('CEDULA_INVALIDA')
+    }
     await setDoc(doc(db, 'perfiles', usuario.id), {
-      cedula,
+      cedula: cedulaNormalizada,
       nombre,
       apellido,
     })
-    setUsuario({ ...usuario, cedula, nombre, apellido })
+    setUsuario({ ...usuario, cedula: cedulaNormalizada, nombre, apellido })
     setPerfilCompleto(true)
   }
 

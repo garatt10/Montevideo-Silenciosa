@@ -5,6 +5,7 @@ import { TIPOS_RUIDO } from '../data/contextoRuido'
 import type { TipoRuido } from '../data/ruido'
 import { useAuth } from '../contexts/AuthContext'
 import { useModo } from '../contexts/ModoContext'
+import { esCedulaUruguayaValida } from '../lib/cedula'
 import {
   obtenerMediciones,
   obtenerReportes,
@@ -34,7 +35,8 @@ function CompletarPerfil() {
   const [guardando, setGuardando] = useState(false)
   const [error, setError] = useState('')
 
-  const completo = nombre.trim() && apellido.trim() && cedula.trim()
+  const cedulaValida = esCedulaUruguayaValida(cedula)
+  const completo = nombre.trim() && apellido.trim() && cedulaValida
 
   async function guardar() {
     if (!completo || guardando) return
@@ -75,6 +77,7 @@ function CompletarPerfil() {
             required
           />
         </label>
+        {cedula && !cedulaValida && <p className="auth-mensaje" role="alert">Ingresá una cédula uruguaya válida.</p>}
         {error && <p className="auth-mensaje" role="alert">{error}</p>}
         <button className="btn-primario" onClick={guardar} disabled={!completo || guardando}>
           <CheckCircle2 size={19} /> {guardando ? 'Guardando...' : 'Guardar perfil'}

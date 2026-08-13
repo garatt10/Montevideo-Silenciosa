@@ -1,6 +1,7 @@
 import { FormEvent, useState } from 'react'
 import { CheckCircle2, Loader2, LogIn, Mail, Lock, UserPlus } from 'lucide-react'
 import { useAuth } from '../contexts/AuthContext'
+import { esCedulaUruguayaValida } from '../lib/cedula'
 
 type ModoAuth = 'registro' | 'login'
 
@@ -20,6 +21,7 @@ const ERRORES_AUTH: Record<string, string> = {
 }
 
 function mensajeDeError(error: unknown): string {
+  if ((error as Error)?.message === 'CEDULA_INVALIDA') return 'Ingresá una cédula uruguaya válida.'
   const codigo = (error as { code?: string })?.code
   return (codigo && ERRORES_AUTH[codigo]) || 'Ocurrió un error. Intentá de nuevo.'
 }
@@ -29,12 +31,18 @@ function Auth({ onSuccess }: AuthProps) {
   const [modo, setModo] = useState<ModoAuth>('registro')
   const [correo, setCorreo] = useState('')
   const [password, setPassword] = useState('')
+  const [nombre, setNombre] = useState('')
+  const [apellido, setApellido] = useState('')
+  const [cedula, setCedula] = useState('')
   const [mensaje, setMensaje] = useState('')
   const [exito, setExito] = useState(false)
   const [enviando, setEnviando] = useState(false)
 
   const esRegistro = modo === 'registro'
-  const formularioCompleto = correo.trim() && password.trim()
+  const cedulaValida = esCedulaUruguayaValida(cedula)
+  const formularioCompleto = esRegistro
+    ? correo.trim() && password.trim() && nombre.trim() && apellido.trim() && cedulaValida
+    : correo.trim() && password.trim()
 
   function cambiarModo(nuevoModo: ModoAuth) {
     setModo(nuevoModo)
@@ -44,7 +52,7 @@ function Auth({ onSuccess }: AuthProps) {
 
   function finalizarExitoso(completar: () => void) {
     setExito(true)
-    setMensaje(esRegistro ? 'Cuenta creada. Ahora completá tu perfil.' : 'Listo.')
+    setMensaje(esRegistro ? 'Cuenta creada.' : 'Listo.')
     setTimeout(() => {
       setEnviando(false)
       onSuccess?.()
@@ -60,7 +68,7 @@ function Auth({ onSuccess }: AuthProps) {
 
     try {
       if (esRegistro) {
-        await registrar(correo.trim().toLowerCase(), password)
+        await registrar(correo.trim().toLowerCase(), password, nombre.trim(), apellido.trim(), cedula)
         finalizarExitoso(() => {})
       } else {
         await login(correo.trim().toLowerCase(), password)
@@ -176,9 +184,40 @@ function Auth({ onSuccess }: AuthProps) {
         </label>
 
         {esRegistro && (
+          <>
+            <label className="auth-field">
+              <span>Nombre</span>
+              <div className="auth-input-wrap">
+                <input value={nombre} onChange={event => setNombre(event.target.value)} placeholder="Ej: Ana" autoComplete="given-name" />
+              </div>
+            </label>
+
+            <label className="auth-field">
+              <span>Apellido</span>
+              <div className="auth-input-wrap">
+                <input value={apellido} onChange={event => setApellido(event.target.value)} placeholder="Ej: Rodríguez" autoComplete="family-name" />
+              </div>
+            </label>
+
+            <label className="auth-field">
+              <span>Cédula uruguaya</span>
+              <div className="auth-input-wrap">
+                <input
+                  value={cedula}
+                  onChange={event => setCedula(event.target.value)}
+                  placeholder="Ej: 1.234.567-8"
+                  inputMode="numeric"
+                  autoComplete="off"
+                />
+              </div>
+              {cedula && !cedulaValida && <small className="auth-aviso">Ingresá una cédula uruguaya válida.</small>}
+            </label>
+          </>
+        )}
+
+        {esRegistro && (
           <p className="auth-aviso">
-            Después de crear la cuenta te pediremos completar tu perfil (nombre y cédula) para
-            habilitar mediciones y reportes.
+            Tu cédula se valida antes de crear la cuenta.
           </p>
         )}
 
