@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { MapContainer, Marker, TileLayer, useMap } from 'react-leaflet'
 import L from 'leaflet'
-import { Camera, Check, ChevronRight, ChevronLeft, LocateFixed, Lock, MapPin, Send, X } from 'lucide-react'
+import { Camera, Check, ChevronRight, ChevronLeft, LocateFixed, Loader2, Lock, MapPin, Send, X } from 'lucide-react'
 import { PERIODOS_RUIDO, TIPOS_RUIDO, ZONAS_MONTEVIDEO, coordsDeZona, zonaMasCercana, type PeriodoRuido } from '../data/contextoRuido'
 import { useAuth } from '../contexts/AuthContext'
 import { useModo } from '../contexts/ModoContext'
@@ -453,12 +453,13 @@ function Reportar() {
             </button>
           ) : (
             <button
-              className="btn-primario reportar-nav-siguiente"
+              className={`btn-primario reportar-nav-siguiente ${enviando ? 'btn-primario--cargando' : ''}`}
               onClick={enviar}
               disabled={enviando}
               type="button"
             >
-              <Send size={18} /> {enviando ? 'Enviando...' : 'Enviar reporte'}
+              {enviando ? <Loader2 className="btn-spinner" size={18} /> : <Send size={18} />}
+              {enviando ? 'Enviando...' : 'Enviar reporte'}
             </button>
           )}
         </div>

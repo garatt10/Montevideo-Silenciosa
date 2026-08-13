@@ -1,6 +1,7 @@
 /* ── Layout ───────────────────────────────────────────────── */
 .layout {
   position: relative;
+  height: 100vh;
   height: 100dvh;
   overflow: hidden;
   background: var(--bg);

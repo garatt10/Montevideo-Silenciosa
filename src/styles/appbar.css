@@ -91,6 +91,7 @@
 
 .appbar-accion--activo {
   color: var(--primary);
+  background: var(--primary-soft);
   border-color: rgba(59, 99, 224, 0.5);
 }
 

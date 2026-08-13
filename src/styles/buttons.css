@@ -37,6 +37,25 @@
   transform: none;
 }
 
+/* Estado de carga: el botón se deshabilita igual, pero se ve
+   claramente "trabajando" en vez de simplemente apagado */
+.btn-primario--cargando {
+  opacity: 0.85;
+  cursor: wait;
+}
+
+.btn-spinner {
+  width: 18px;
+  height: 18px;
+  animation: btn-spin 0.7s linear infinite;
+}
+
+@keyframes btn-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 .btn-secundario {
   color: var(--text);
   background: var(--surface-2);

@@ -1,5 +1,5 @@
 import { FormEvent, useState } from 'react'
-import { CheckCircle2, LogIn, Mail, Lock, UserPlus } from 'lucide-react'
+import { CheckCircle2, Loader2, LogIn, Mail, Lock, UserPlus } from 'lucide-react'
 import { useAuth } from '../contexts/AuthContext'
 
 type ModoAuth = 'registro' | 'login'
@@ -192,9 +192,18 @@ function Auth({ onSuccess }: AuthProps) {
           </p>
         )}
 
-        <button className="btn-primario auth-submit" disabled={!formularioCompleto || enviando}>
-          {esRegistro ? <UserPlus size={19} /> : <LogIn size={19} />}
-          {esRegistro ? 'Crear cuenta' : 'Ingresar'}
+        <button
+          className={`btn-primario auth-submit ${enviando ? 'btn-primario--cargando' : ''}`}
+          disabled={!formularioCompleto || enviando}
+        >
+          {enviando ? (
+            <Loader2 className="btn-spinner" size={19} />
+          ) : esRegistro ? (
+            <UserPlus size={19} />
+          ) : (
+            <LogIn size={19} />
+          )}
+          {enviando ? 'Un momento...' : esRegistro ? 'Crear cuenta' : 'Ingresar'}
         </button>
       </form>
     </div>

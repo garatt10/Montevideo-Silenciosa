@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { MapContainer, TileLayer, Marker, useMap } from 'react-leaflet'
 import L from 'leaflet'
-import { Check, Info, LocateFixed, Lock, MapPin, Mic, RotateCcw, Send, X } from 'lucide-react'
+import { Check, Info, LocateFixed, Loader2, Lock, MapPin, Mic, RotateCcw, Send, X } from 'lucide-react'
 import { useModo } from '../contexts/ModoContext'
 import { useAuth } from '../contexts/AuthContext'
 import {
@@ -461,8 +461,13 @@ function Medicion() {
 
           {puedeEnviar ? (
             <div className="medicion-acciones">
-              <button className="btn-primario" onClick={enviar} disabled={enviando}>
-                <Send size={20} /> {enviando ? 'Guardando...' : 'Guardar medición'}
+              <button
+                className={`btn-primario ${enviando ? 'btn-primario--cargando' : ''}`}
+                onClick={enviar}
+                disabled={enviando}
+              >
+                {enviando ? <Loader2 className="btn-spinner" size={20} /> : <Send size={20} />}
+                {enviando ? 'Guardando...' : 'Guardar medición'}
               </button>
               <button className="btn-secundario" onClick={iniciar}>
                 <RotateCcw size={20} /> Repetir
