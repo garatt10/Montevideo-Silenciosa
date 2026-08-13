@@ -100,23 +100,6 @@
     padding-top: calc(var(--appbar-top) + var(--appbar-height) + 60px + env(safe-area-inset-top, 0px));
   }
 
-  /* Desahogo de espaciado en Noticias */
-  .noticias-head {
-    padding: 20px;
-  }
-
-  .noticias-filtros {
-    gap: 10px;
-  }
-
-  .noticias-head + .noticias-filtros,
-  .noticias-filtros + .noticias-lista {
-    margin-top: 14px;
-  }
-
-  .noticia-card {
-    padding: 18px;
-  }
 
   /* Desahogo de espaciado en Metodología */
   .metodologia-scroll {
@@ -208,7 +191,8 @@
 /* Teléfonos compactos (375 px) */
 @media (max-width: 389px) {
   .medicion-body,
-  .reportar-body {
+  .reportar-body,
+  .noticias-body {
     padding-left: 16px;
     padding-right: 16px;
   }

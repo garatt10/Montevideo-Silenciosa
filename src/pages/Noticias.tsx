@@ -99,58 +99,60 @@ function Noticias() {
 
   return (
     <div className="page">
-      <div className="noticias-head">
-        <div className="noticias-icono"><Newspaper size={26} /></div>
-        <div>
-          <h1 className="noticias-titulo">Noticias y novedades</h1>
-          <p className="noticias-subtitulo">
-            Cobertura de prensa, investigación y avances del prototipo sobre ruido urbano en
-            Montevideo.
-          </p>
+      <div className="noticias-body">
+        <div className="noticias-head">
+          <div className="noticias-icono"><Newspaper size={26} /></div>
+          <div>
+            <h1 className="noticias-titulo">Noticias y novedades</h1>
+            <p className="noticias-subtitulo">
+              Cobertura de prensa, investigación y avances del prototipo sobre ruido urbano en
+              Montevideo.
+            </p>
+          </div>
         </div>
-      </div>
 
-      <div className="noticias-filtros" role="group" aria-label="Filtrar noticias por tema">
-        {TEMAS.map((item) => (
-          <button
-            key={item.id}
-            type="button"
-            className={`noticias-filtro${tema === item.id ? ' noticias-filtro--activo' : ''}`}
-            onClick={() => setTema(item.id)}
-            aria-pressed={tema === item.id}
-          >
-            {item.label}
-          </button>
-        ))}
-      </div>
+        <div className="noticias-filtros" role="group" aria-label="Filtrar noticias por tema">
+          {TEMAS.map((item) => (
+            <button
+              key={item.id}
+              type="button"
+              className={`noticias-filtro${tema === item.id ? ' noticias-filtro--activo' : ''}`}
+              onClick={() => setTema(item.id)}
+              aria-pressed={tema === item.id}
+            >
+              {item.label}
+            </button>
+          ))}
+        </div>
 
-      <div className="noticias-lista">
-        {filtradas.map(n => (
-          <article key={n.id} className="noticia-card">
-            <span className="noticia-categoria" style={{ background: n.color }}>{n.categoria}</span>
-            <h2 className="noticia-titulo">{n.titulo}</h2>
-            <p className="noticia-extracto">{n.extracto}</p>
-            <div className="noticia-footer">
-              <time className="noticia-fecha">{n.fecha}</time>
-              {n.url && !n.ejemplo && (
-                <a
-                  className="noticia-enlace"
-                  href={n.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {n.medio} ↗
-                </a>
-              )}
-            </div>
-          </article>
-        ))}
-        {filtradas.length === 0 && (
-          <p className="noticias-vacio">No hay noticias para este tema todavía.</p>
-        )}
-        <Link to="/metodologia" className="noticias-metodologia">
-          Datos y metodología del mapa →
-        </Link>
+        <div className="noticias-lista">
+          {filtradas.map(n => (
+            <article key={n.id} className="noticia-card">
+              <span className="noticia-categoria" style={{ background: n.color }}>{n.categoria}</span>
+              <h2 className="noticia-titulo">{n.titulo}</h2>
+              <p className="noticia-extracto">{n.extracto}</p>
+              <div className="noticia-footer">
+                <time className="noticia-fecha">{n.fecha}</time>
+                {n.url && !n.ejemplo && (
+                  <a
+                    className="noticia-enlace"
+                    href={n.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {n.medio} ↗
+                  </a>
+                )}
+              </div>
+            </article>
+          ))}
+          {filtradas.length === 0 && (
+            <p className="noticias-vacio">No hay noticias para este tema todavía.</p>
+          )}
+          <Link to="/metodologia" className="noticias-metodologia">
+            Datos y metodología del mapa →
+          </Link>
+        </div>
       </div>
     </div>
   )
