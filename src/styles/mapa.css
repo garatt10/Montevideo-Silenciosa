@@ -39,8 +39,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 34px;
-  height: 34px;
+  width: 44px;
+  height: 44px;
   border-radius: var(--radius-full);
   border: none;
   background: var(--surface-2);
@@ -76,8 +76,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 42px;
-  height: 42px;
+  width: 44px;
+  height: 44px;
   border-radius: var(--radius-full);
   border: none;
   background: transparent;
@@ -255,8 +255,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 34px;
-  height: 34px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   border: 1px solid var(--border);
   background: var(--surface-2);
@@ -337,6 +337,7 @@
 }
 
 .filtro-chip {
+  min-height: 44px;
   padding: 8px 14px;
   font-size: 13px;
   font-weight: 600;
@@ -359,6 +360,7 @@
 }
 
 .mapa-toggle {
+  min-height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;

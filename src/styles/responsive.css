@@ -117,6 +117,21 @@
   }
 }
 
+/* Las páginas de lectura conservan una columna cómoda en tablet y escritorio. */
+@media (min-width: 768px) {
+  .perfil-body,
+  .noticias-body,
+  .metodologia-scroll {
+    width: min(100%, 760px);
+    margin-inline: auto;
+  }
+
+  .reportar-body {
+    width: min(100%, 820px);
+    margin-inline: auto;
+  }
+}
+
 @media (min-width: 1024px) {
   .appbar {
     left: 20px;

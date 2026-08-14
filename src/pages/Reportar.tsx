@@ -253,7 +253,7 @@ function Reportar() {
   }
 
   return (
-    <div className="page">
+    <div className="page page-reportar">
       <Pasos pasos={PASOS} pasoActual={paso} />
       <div className="reportar-body">
         <input
