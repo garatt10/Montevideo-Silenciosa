@@ -22,6 +22,9 @@ const ERRORES_AUTH: Record<string, string> = {
 
 function mensajeDeError(error: unknown): string {
   if ((error as Error)?.message === 'CEDULA_INVALIDA') return 'Ingresá una cédula uruguaya válida.'
+  if ((error as { code?: string })?.code === 'permission-denied') {
+    return 'La cuenta fue creada, pero no se pudo guardar el perfil. Ingresá de nuevo e intentá completarlo.'
+  }
   const codigo = (error as { code?: string })?.code
   return (codigo && ERRORES_AUTH[codigo]) || 'Ocurrió un error. Intentá de nuevo.'
 }

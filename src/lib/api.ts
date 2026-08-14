@@ -66,6 +66,10 @@ const COLECCIONES = {
 
 const LIMITE_LISTADOS = 500
 
+function texto(valor: unknown, fallback = ''): string {
+  return typeof valor === 'string' ? valor : fallback
+}
+
 function convertirFecha(valor: unknown): string {
   try {
     if (valor instanceof Date) return valor.toISOString()
@@ -85,13 +89,13 @@ function medicionDesdeDoc(documento: QueryDocumentSnapshot): MedicionGuardada {
     id: documento.id,
     decibeles: Number(datos.decibeles),
     fecha: convertirFecha(datos.fecha),
-    fuente: datos.fuente,
-    zona: datos.zona,
-    nota: datos.nota,
+    fuente: typeof datos.fuente === 'string' ? datos.fuente as TipoRuido : undefined,
+    zona: texto(datos.zona) || undefined,
+    nota: texto(datos.nota) || undefined,
     lat: typeof datos.lat === 'number' ? datos.lat : undefined,
     lng: typeof datos.lng === 'number' ? datos.lng : undefined,
     simulada: Boolean(datos.simulada),
-    userId: datos.userId ?? undefined,
+    userId: texto(datos.userId) || undefined,
   }
 }
 
@@ -99,17 +103,17 @@ function reporteDesdeDoc(documento: QueryDocumentSnapshot): ReporteGuardado {
   const datos = documento.data()
   return {
     id: documento.id,
-    descripcion: datos.descripcion,
+    descripcion: texto(datos.descripcion, 'Sin descripción'),
     fecha: convertirFecha(datos.fecha),
-    fuente: datos.fuente,
-    periodo: datos.periodo,
-    zona: datos.zona,
-    intensidad: datos.intensidad,
+    fuente: typeof datos.fuente === 'string' ? datos.fuente as TipoRuido : undefined,
+    periodo: typeof datos.periodo === 'string' ? datos.periodo as PeriodoRuido : undefined,
+    zona: texto(datos.zona) || undefined,
+    intensidad: texto(datos.intensidad) || undefined,
     recurrente: Boolean(datos.recurrente),
-    fotoUrl: datos.fotoUrl ?? undefined,
+    fotoUrl: texto(datos.fotoUrl) || undefined,
     lat: typeof datos.lat === 'number' ? datos.lat : undefined,
     lng: typeof datos.lng === 'number' ? datos.lng : undefined,
-    userId: datos.userId ?? undefined,
+    userId: texto(datos.userId) || undefined,
   }
 }
 
@@ -197,13 +201,13 @@ export async function obtenerNoticias(): Promise<NoticiaGuardada[]> {
     const datos = documento.data()
     return {
       id: Number(datos.id),
-      titulo: datos.titulo,
-      extracto: datos.extracto,
-      categoria: datos.categoria,
-      fecha: datos.fecha,
-      color: datos.color,
-      url: datos.url ?? undefined,
-      medio: datos.medio ?? undefined,
+      titulo: texto(datos.titulo, 'Sin título'),
+      extracto: texto(datos.extracto),
+      categoria: texto(datos.categoria, 'Actualidad'),
+      fecha: texto(datos.fecha),
+      color: texto(datos.color, '#3b63e0'),
+      url: texto(datos.url) || undefined,
+      medio: texto(datos.medio) || undefined,
       ejemplo: Boolean(datos.ejemplo),
       tema: (datos.tema as TemaNoticia) ?? 'montevideo',
     }

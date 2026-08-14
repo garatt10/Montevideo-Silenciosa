@@ -73,11 +73,27 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         setCargando(false)
         return
       }
-      const perfil = await cargarPerfil(firebaseUser)
-      if (auth.currentUser?.uid !== firebaseUser.uid) return
-      setUsuario(perfil.usuario)
-      setPerfilCompleto(perfil.completo)
+
+      // La sesión no debe depender de una lectura de Firestore: si está sin
+      // conexión, Perfil sigue disponible para volver a intentar completarlo.
+      setUsuario({
+        id: firebaseUser.uid,
+        email: firebaseUser.email ?? '',
+        cedula: '',
+        nombre: firebaseUser.displayName ?? '',
+        apellido: '',
+      })
+      setPerfilCompleto(false)
       setCargando(false)
+
+      try {
+        const perfil = await cargarPerfil(firebaseUser)
+        if (auth.currentUser?.uid !== firebaseUser.uid) return
+        setUsuario(perfil.usuario)
+        setPerfilCompleto(perfil.completo)
+      } catch {
+        // Se conserva el estado básico de la sesión ya mostrado arriba.
+      }
     })
     return desuscribir
   }, [])
@@ -100,16 +116,11 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       throw new Error('CEDULA_INVALIDA')
     }
     const credenciales = await createUserWithEmailAndPassword(auth, email, password)
-    try {
-      await setDoc(doc(db, 'perfiles', credenciales.user.uid), {
-        cedula: cedulaNormalizada,
-        nombre,
-        apellido,
-      })
-    } catch {
-      // La cuenta ya quedó creada en Auth. Si el perfil no se pudo escribir
-      // (p. ej. caída de red), se inicializará al completar el perfil.
-    }
+    await setDoc(doc(db, 'perfiles', credenciales.user.uid), {
+      cedula: cedulaNormalizada,
+      nombre,
+      apellido,
+    })
     setUsuario({
       id: credenciales.user.uid,
       email: credenciales.user.email ?? email,
