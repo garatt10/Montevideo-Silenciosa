@@ -228,6 +228,14 @@
 }
 
 .medicion-resultado-etiqueta {
+  display: inline-block;
+  margin: 6px 0 0;
+  padding: 4px 10px;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-full);
+  background: var(--surface-2);
+  font-size: 13px;
+  line-height: 1.3;
   text-transform: capitalize;
 }
 
@@ -368,6 +376,19 @@
 .medicion-acciones .btn-primario,
 .medicion-acciones .btn-secundario {
   flex: 1;
+}
+
+.medicion-acciones--bloqueadas {
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.medicion-acciones--bloqueadas .medicion-gps {
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-input);
+  background: var(--surface-2);
+  text-align: center;
 }
 
 .medicion-check {

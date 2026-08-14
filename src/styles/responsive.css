@@ -100,6 +100,25 @@
     padding-top: calc(var(--appbar-top) + var(--appbar-height) + 60px + env(safe-area-inset-top, 0px));
   }
 
+  /* Pantalla inicial: CTA visible sin tener que atravesar una lista larga. */
+  .medicion-listo {
+    gap: 14px;
+    padding-top: calc(var(--appbar-top) + var(--appbar-height) + 48px + env(safe-area-inset-top, 0px));
+  }
+
+  .medicion-listo .medicion-icono {
+    width: 96px;
+    height: 96px;
+  }
+
+  .medicion-listo .medicion-pasos-lista {
+    gap: 8px;
+  }
+
+  .medicion-listo .medicion-pasos-lista li {
+    padding: 10px 12px;
+  }
+
 
   /* Desahogo de espaciado en Metodología */
   .metodologia-scroll {
@@ -217,8 +236,18 @@
     justify-content: center;
   }
 
-  .medicion-resultado-etiqueta {
-    font-size: 34px;
+  .medicion-mapa-head {
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+
+  .medicion-mapa-head strong {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .medicion-gps-btn {
+    margin-left: auto;
   }
 
   .reportar-paso-head p {

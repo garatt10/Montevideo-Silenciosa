@@ -305,7 +305,7 @@ function Medicion() {
       />
 
       {estado === 'listo' && (
-        <div className="medicion-body">
+        <div className="medicion-body medicion-listo">
           <div className="medicion-icono"><Mic size={56} /></div>
           <h1 className="medicion-titulo">Medir el ruido</h1>
           <p className="medicion-desc">
@@ -319,7 +319,7 @@ function Medicion() {
             <li><Check size={18} /> Al terminar, podés ajustar ubicación y guardar</li>
           </ul>
 
-            <div className="medicion-duracion">
+          <div className="medicion-duracion">
             <span className="medicion-duracion-label">Duración</span>
             <div className="medicion-duracion-chips" role="group" aria-label="Elegir duración">
               {OPCIONES_DURACION.map((opcion) => (
